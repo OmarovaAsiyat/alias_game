@@ -1,0 +1,799 @@
+// Словарь уровня Upper-Intermediate для игры Alias.
+// Сконвертировано автоматически из исходного файла преподавателя.
+// Формат: '## Категория' начинает раздел, слова — по одному на строку,
+// строки с '//' игнорируются игрой.
+
+## Illnesses And Injuries
+// Источник: SB p.152, File 2A.
+// У преподавателя ручной подсчёт — 35; ниже даны все синонимы из VB
+// отдельными карточками (в т.ч. "back hurts"/"back aches"), поэтому
+// фактически 38. Если нужно ровно 35 — сообщите, что убрать.
+
+a cough
+a headache
+backache
+earache
+stomach ache
+toothache
+a rash
+a temperature
+sunburn
+to be sick
+to vomit
+to sneeze
+a swollen ankle
+her back hurts
+her back aches
+a bleeding finger
+unconscious
+an allergic reaction
+a sprained ankle
+high blood pressure
+low blood pressure
+food poisoning
+choking
+to burn
+a sore throat
+diarrhoea
+to feel sick
+to faint
+a blister
+a cold
+flu
+dizzy
+to cut yourself
+to lie down
+to pass out
+to come round
+to get over (an illness)
+to throw up
+
+
+## Clothes And Fashion
+// Источник: SB p.153, File 2B.
+// Материал и предмет — отдельными карточками (по правке преподавателя).
+
+loose
+tight
+hooded
+long-sleeved
+short-sleeved
+polo neck
+sleeveless
+V-neck
+checked
+patterned
+plain
+spotted
+striped
+casual
+classic
+old-fashioned
+scruffy
+smart
+cotton
+a vest
+denim
+a waistcoat
+fur
+a collar
+lace
+a top
+linen
+a suit
+lycra
+a swimsuit
+silk
+a scarf
+velvet
+a bow tie
+wool(len)
+a cardigan
+leather
+sandals
+suede
+boots
+to dress up
+to hang up
+to fit (somebody)
+to suit (somebody)
+to match
+to get changed
+to get undressed
+to get dressed
+to go with
+
+
+## Air Travel
+// Источник: SB p.154, File 3A.
+// У преподавателя 30, здесь 29 — расхождение в 1, несущественно.
+
+an airport terminal
+bag(gage) drop
+baggage reclaim
+a check-in desk
+customs
+a departures board
+a gate
+a runway
+security
+an (airline) lounge
+an aisle
+cabin crew
+a connecting flight
+a direct flight
+jet lag
+a long-haul flight
+a row
+a seat belt
+turbulence
+travel
+a trip
+a journey
+to check in
+to drop off
+to fill in
+to get off
+to get on
+to pick up
+to take off
+
+
+## Adverbs And Adverbial Phrases
+// Источник: SB p.155, File 3B.
+// На свой страх и риск — плохо гадается, включено по решению
+// преподавателя. Пары через слэш разбиты на отдельные карточки.
+
+hard
+hardly
+at the moment
+actually
+especially
+specially
+in the end
+at the end
+ever
+even
+near
+nearly
+late
+lately
+still
+yet
+in fact
+eventually
+ideally
+basically
+apparently
+certainly
+obviously
+gradually
+
+
+## Weather
+// Источник: SB p.156, File 4A.
+// Пары через слэш (freezing/below zero, boiling/scorching) разбиты
+// на отдельные карточки.
+
+cool
+warm
+cold
+freezing
+below zero
+hot
+boiling
+scorching
+mild
+humid
+chilly
+damp
+drizzling
+showers
+pouring
+a breeze
+windy
+fog
+mist
+smog
+a blizzard
+a drought
+a flood
+hail
+a heatwave
+a hurricane
+lightning
+a monsoon
+thunder
+bright
+changeable
+clear
+heavy
+icy
+settled
+strong
+sunny
+thick
+
+
+## Feelings
+// Источник: SB p.157, File 5A.
+
+miserable
+homesick
+disappointed
+lonely
+proud
+fed up
+grateful
+upset
+relieved
+offended
+astonished
+bewildered
+delighted
+desperate
+devastated
+horrified
+overwhelmed
+stunned
+thrilled
+scared stiff
+down
+shattered
+gobsmacked
+sick of
+gutted
+
+
+## Verbs Often Confused
+// Источник: SB p.158, File 7A. 14 пар взяты отдельными карточками.
+
+to argue
+to discuss
+to notice
+to realize
+to avoid
+to prevent
+to lend
+to borrow
+to mind
+to matter
+to remember
+to remind
+to expect
+to wait
+to wish
+to hope
+to beat
+to win
+to refuse
+to deny
+to raise
+to rise
+to lay
+to lie
+to steal
+to rob
+to advise
+to warn
+
+
+## The Body
+// Источник: SB p.159, File 7B.
+// У преподавателя 40, здесь 43 — часть пар ("shake hands/shake your
+// head", "yawn/stretch") разбита на отдельные карточки. Сверить, нужно
+// ли объединять обратно.
+
+an ankle
+a calf
+a heel
+a knee
+an elbow
+a fist
+nails
+a palm
+a wrist
+a bottom
+a chest
+a hip
+a thigh
+a waist
+a brain
+a heart
+kidneys
+a liver
+lungs
+to bite your nails
+to blow your nose
+to brush your hair
+to brush your teeth
+to comb your hair
+to fold your arms
+to hold somebody's hand
+to touch your nose
+to suck your thumb
+to shake hands
+to shake your head
+to shrug your shoulders
+to raise your eyebrows
+to wink
+to chew
+to hug
+to wave
+to kneel
+to frown
+to scratch
+to stare
+to yawn
+to stretch
+to point
+
+
+## Crimes And Criminals
+// Источник: SB p.160, File 8A (часть 1 — Vocabulary Bank).
+// Разбито на 2 категории по просьбе преподавателя (было единой темой
+// Crime and punishment, 67 слов = эта категория + следующая).
+
+blackmail
+a blackmailer
+to blackmail
+bribery
+a bribe
+burglary
+a burglar
+to break in
+to burgle
+drug dealing
+a drug dealer
+to sell drugs
+fraud
+a fraudster
+to commit fraud
+hacking
+a hacker
+to hack (into)
+hijacking
+a hijacker
+to hijack
+kidnapping
+a kidnapper
+to kidnap
+mugging
+a mugger
+to mug
+murder
+a murderer
+to murder
+rape
+a rapist
+to rape
+robbery
+a robber
+to rob
+smuggling
+a smuggler
+to smuggle
+stalking
+a stalker
+to stalk
+terrorism
+a terrorist
+to set off bombs
+theft
+a thief
+to steal
+vandalism
+a vandal
+to vandalize
+
+
+## What Happens To A Criminal
+// Источник: SB p.160, File 8A (часть 2 — Vocabulary Bank).
+// Глаголы приведены к инфинитиву (в книге были в форме причастия).
+
+to arrest
+to catch
+to commit a crime
+to investigate
+to question
+to accuse
+to acquit
+a court
+evidence
+guilty (opp. innocent)
+a judge
+a jury
+proof
+punishment
+to sentence
+a verdict
+witnesses
+
+
+## Headline Verbs
+// Источник: SB p.161, File 8B (Vocabulary Bank) + SB p.82, ex.4a.
+// Выделено в отдельную категорию по просьбе преподавателя — плохо
+// гадается и редко встречается в разговорном языке.
+
+to back (somebody)
+to axe
+to hit
+to bid
+to clash
+to vow
+to quiz
+to row
+to quit
+to be tipped (to become)
+to wed
+to split
+
+
+## The Media
+// Источник: SB p.161, File 8B (Vocabulary Bank).
+
+an agony aunt
+a commentator
+a critic
+an editor
+a freelance journalist
+a newsreader
+paparazzi
+a presenter
+a reporter
+sensational
+biased
+objective
+accurate
+censored
+
+
+## Business
+// Источник: SB p.162, File 9A/9B (Vocabulary Bank).
+
+to become
+to close down
+to drop
+to grow
+to expand
+to export
+to import
+to launch
+to manufacture
+to market
+to merge
+to produce
+to set up
+to take over
+to do business
+to do a job
+to do market research
+to do well
+to do badly
+to make a deal
+to make a decision
+to make a loss
+to make money
+to make somebody redundant
+any other business
+to go out of business
+to get down to business
+to mean business
+none of your business
+mind your own business
+unfinished business
+to mix business with pleasure
+
+
+## Word Building: Prefixes And Suffixes
+// Источник: SB p.163, File 9B (Vocabulary Bank, раздел 1).
+
+overcrowded
+megacities
+underdeveloped
+multicultural
+a subway
+bilingual
+a monorail
+autopilot
+antisocial
+misunderstood
+postgraduate
+homeless
+hopeless
+careful
+useful
+bulletproof
+waterproof
+unbreakable
+drinkable
+
+
+## Word Building: Nouns Formed With Suffixes
+// Источник: SB p.163, File 9B (Vocabulary Bank, раздел 2).
+// Формат карточки: слово-подсказка (база) → однокоренной ответ
+// (существительное).
+
+absence
+accommodation
+alcoholism
+brotherhood
+childhood
+distance
+employment
+entertainment
+excitement
+friendliness
+government
+ignorance
+improvement
+intention
+loneliness
+racism
+reduction
+ugliness
+vandalism
+violence
+weakness
+
+
+## Word Building: Nouns Which Are Different Words
+// Источник: SB p.163, File 9B (Vocabulary Bank, раздел 3).
+// Пары через слэш разбиты на отдельные карточки (сущ. + гл./прил.).
+
+loss
+to lose
+death
+to die
+success
+to succeed
+thought
+to think
+belief
+to believe
+heat
+hot
+strength
+strong
+hunger
+hungry
+height
+high
+width
+wide
+
+
+## Compound Adjectives (Personality) — File 1B
+// Источник: TG p.22.
+
+easy-going
+good-tempered
+laid-back
+open-minded
+well-balanced
+well-behaved
+absent-minded
+bad-tempered
+big-headed
+narrow-minded
+self-centred
+strong-willed
+tight-fisted
+two-faced
+
+
+## Expressions With Take — File 4B
+// Источник: TG p.68–69. Включены и основной список, и фразовые
+// глаголы из Video Listening.
+
+to take care of
+to take advantage of
+to take place
+to take your time
+to take into account
+to take no notice
+to take pity on
+to take off
+to take up
+to take to
+to take against
+to take out
+to take after (somebody)
+to take risks
+to take part in
+
+
+## Expressing Feelings — Verbs — File 5B
+// Источник: TG p.79–80.
+
+to infuriate
+to frustrate
+to embarrass
+to exhaust
+to disappoint
+to amaze
+to terrify
+to inspire
+to confuse
+to thrill
+
+
+## Expressing Feelings — Adjectives — File 5B
+// Источник: TG p.79–80.
+// Пары через слэш (-ed/-ing формы) разбиты на отдельные карточки.
+
+infuriating
+frustrated
+frustrating
+embarrassing
+exhausting
+disappointed
+disappointing
+amazing
+terrifying
+inspired
+inspiring
+confusing
+thrilled
+thrilling
+stressful
+scary
+delightful
+offensive
+
+
+## Sleep — File 6A
+// Источник: TG p.90–91.
+// У преподавателя 21, здесь 20 — расхождение в 1, не найдено, какое
+// слово недостаёт.
+
+to yawn
+a nap
+sleepy
+to snore
+blankets
+sheets
+a pillow
+a duvet
+insomnia
+sleeping pills
+to be a light sleeper
+to be a heavy sleeper
+to fall asleep
+to be fast asleep
+to have nightmares
+to keep you awake
+to oversleep
+to set the alarm
+to sleep like a log
+to sleepwalk
+
+
+## Music (Instruments And Roles) — File 6B
+// Источник: TG p.94–96.
+
+a cello
+drums
+a bass guitar
+a saxophone
+a flute
+a keyboard
+a violin
+a conductor
+a choir
+a soprano
+an orchestra
+
+
+## Words From Other Languages — File 6B
+// Источник: SB p.61.
+// Формально это раздел Pronunciation, а не Vocabulary — добавлено
+// отдельной категорией по просьбе преподавателя.
+
+a barista
+a cappuccino
+graffiti
+a macchiato
+paparazzi
+a villa
+architecture
+a hypochondriac
+a microphone
+philosophy
+psychic
+a psychologist
+a bouquet
+a chauffeur
+a chef
+chic
+a croissant
+a fiancé
+
+
+## Advertising — File 9A
+// Источник: SB p.86, ex.1c.
+
+advertisements
+claims
+brands
+to be sued
+misleading
+consumers
+advertising campaigns
+publicity
+a slogan
+a viral advert
+
+
+## Science — File 10A
+// Источник: TG p.145–147.
+// "Sciences and scientists" разбиты на отдельные карточки (наука +
+// учёный по отдельности).
+
+to reflect
+to scatter
+to dissolve
+to rotate
+moist
+gas
+a particle
+water vapour
+gravity
+science
+a scientist
+physics
+a physicist
+chemistry
+a chemist
+biology
+a biologist
+astronomy
+an astronomer
+genetics
+a geneticist
+botany
+a botanist
+zoology
+a zoologist
+a laboratory
+a discovery
+a theory
+drugs
+tests
+research
+side effects
+guinea pigs
+a clone
+an experiment
+
+
+## Collocation: Word Pairs — File 10B
+// Источник: SB p.102–103, ex.4. Включены пары с and, с or и идиомы
+// из ex.4e.
+
+backwards and forwards
+cause and effect
+forgive and forget
+health and safety
+live and learn
+thunder and lightning
+pros and cons
+peace and quiet
+supply and demand
+short and sweet
+right or wrong
+now or never
+more or less
+sooner or later
+all or nothing
+once or twice
+dead or alive
+rain or shine
+bits and pieces
+now and again
+wait and see
+safe and sound
+by and large
+law and order
+sick and tired
+touch and go

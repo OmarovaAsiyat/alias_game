@@ -1,0 +1,620 @@
+// Словарь уровня Intermediate для игры Alias.
+// Сконвертировано автоматически из исходного файла преподавателя.
+// Формат: '## Категория' начинает раздел, слова — по одному на строку,
+// строки с '//' игнорируются игрой.
+
+## Food And Cooking
+// Источник: SB p.152, File 1A.
+
+crab
+lobster
+mussels
+prawns
+salmon
+squid
+tuna
+beef
+chicken
+duck
+lamb
+pork
+an aubergine
+an avocado
+a beetroot
+a cabbage
+cherries
+a courgette
+a cucumber
+grapes
+green beans
+a lemon
+a mango
+a melon
+a peach
+a pear
+raspberries
+a red pepper
+baked
+boiled
+fried
+grilled
+roast
+steamed
+to eat out
+to cut down on
+to cut out
+
+
+## Personality
+// Источник: SB p.153, File 1B. Включает основной список прилагательных
+// и негативные формы (Negative Prefixes)
+
+affectionate
+ambitious
+anxious
+bossy
+charming
+competitive
+honest
+imaginative
+independent
+insecure
+mature
+moody
+patient
+rebellious
+reliable
+self-confident
+selfish
+sensible
+sensitive
+sociable
+spoilt
+stubborn
+unambitious
+unfriendly
+dishonest
+unimaginative
+unkind
+immature
+disorganized
+impatient
+unreliable
+irresponsible
+unselfish
+insensitive
+unsociable
+untidy
+
+
+## Money
+// Источник: SB p.154, File 2A.
+
+to be worth
+to borrow
+to afford
+to charge
+to cost
+to earn
+to inherit
+to invest
+to lend
+to owe
+to raise
+to save
+to waste
+a bill
+a budget
+contactless payment
+insurance
+a loan
+a mortgage
+a salary
+taxes
+to take out (money)
+to pay back
+to live off
+to live on
+
+
+## Transport
+// Источник: SB p.155, File 3A.
+
+a coach
+a ferry
+a lorry
+a motorbike
+a motorway
+a scooter
+a tram
+the Underground
+a van
+a car crash
+a cycle lane
+a parking fine
+a pedestrian crossing
+a petrol station
+road works
+the rush hour
+a seat belt
+a speed camera
+a speed limit
+a taxi rank
+traffic lights
+a traffic jam
+a zebra crossing
+to set off
+to pick somebody up
+to end up
+to run out of petrol
+to watch out
+
+
+## Sport
+// Источник: SB p.157, File 5A.
+
+a captain
+a coach
+fans
+players
+a referee (umpire)
+spectators (the crowd)
+a sports hall
+a stadium
+a team
+a circuit
+a course
+a court
+a pitch
+a pool
+a slope
+a track
+to beat
+to win
+to lose
+to draw
+to do yoga
+to get fit
+to get injured
+to go swimming
+to kick
+to score
+to throw
+to train
+to warm up
+to work out
+to be sent off
+to be knocked out
+
+
+## Relationships
+// Источник: SB p.158, File 5B.
+
+a classmate
+a close friend
+a colleague
+a couple
+an ex
+a fiancé (fiancée)
+a flatmate
+a partner
+to be together
+to become friends
+to break up
+to get in touch
+to get married
+to get on
+to get to know somebody
+to go out together
+to have something in common
+to lose touch
+to meet
+to propose
+
+
+## Cinema
+// Источник: SB p.159, File 6A.
+
+an action film
+an animation
+a comedy
+a drama
+a historical film
+a horror film
+a musical
+a rom-com
+a science fiction film
+a thriller
+a war film
+a western
+an audience
+a cast
+a critic
+an extra
+a plot
+a review
+a scene
+a script
+a sequel
+a set
+a soundtrack
+special effects
+a star
+subtitles
+a trailer
+to be based on
+to be set in
+to be directed by
+to play the part of
+to be shot on location
+to be dubbed
+
+
+## The Body
+// Источник: SB p.160, File 6B.
+
+an arm
+a back
+a chin
+an ear
+an eye
+a face
+a foot
+a finger
+a hand
+a head
+a knee
+a leg
+a lip
+a mouth
+a neck
+a nose
+a shoulder
+a stomach
+a tooth
+a thumb
+a toe
+a tongue
+to bite
+to clap
+to kick
+to nod
+to point
+to smell
+to smile
+to stare
+to taste
+to touch
+to whistle
+
+
+## Education
+// Источник: SB p.161, File 7A.
+
+a boarding school
+a degree
+a head teacher
+a nursery school
+a primary school
+a private school
+a pupil
+a secondary school
+a state school
+a student
+a term
+a college
+an elementary school
+a grade
+a high school
+a kindergarten
+a semester
+twelfth grade
+not allowed to
+to be expelled
+to be punished
+to cheat
+to let
+to make
+to misbehave
+to fail
+to pass
+a result
+to revise
+to take an exam
+
+
+## Houses
+// Источник: SB p.162, File 7B.
+
+an attic
+a balcony
+a basement
+a chimney
+an entrance
+a gate
+the ground floor
+a path
+a roof
+steps
+a terrace (patio)
+the top floor
+a wall
+a ceiling
+an open fire
+cosy
+modern
+spacious
+light
+
+
+## Work
+// Источник: SB p.163, File 8A. Раздел "Saying what you do" взят частично
+// (только часть a — типы занятости); часть b (предлоги) не включена.
+// Word-building на этой странице взят целиком, включая и корневое слово,
+// и производное.
+
+to apply for a job
+to do overtime
+to get promoted
+to resign
+to retire
+to run a business
+to set up a business
+to be made redundant
+to be sacked
+to work shifts
+to do a training course
+freelance
+part-time
+self-employed
+temporary
+unemployed
+to promote
+promotion
+to apply
+application
+retirement
+to employ
+employment
+to qualify
+qualification
+resignation
+science
+scientist
+law
+lawyer
+music
+musician
+pharmacy
+pharmacist
+farm
+farmer
+to translate
+translator
+
+
+## Family — File 1B
+// Источник: SB p.10, ex.1a ("what's the difference between…?").
+
+a parent
+a stepmother
+a brother-in-law
+a stepsister
+a half-sister
+a great-grandfather
+an adopted child
+an only child
+siblings
+immediate family
+extended family
+
+
+## Strong Adjectives — File 2B
+// Источник: SB p.23, ex.7.
+
+exhausted
+freezing
+filthy
+furious
+tiny
+terrified
+fascinating
+starving
+huge
+enormous
+boiling
+delighted
+hilarious
+positive
+amazed
+
+
+## Phone Language — File 4A
+// Источник: SB p.36, ex.1.
+
+to dial a number
+to text somebody
+a ringtone
+to hang up
+to call back
+to leave a voicemail
+engaged (busy)
+to swipe
+to go off
+to put somebody on hold
+to be cut off
+
+
+## -Ed / -Ing Adjectives — File 4B
+// Источник: SB p.42, ex.5. Взято отдельными карточками, не парами.
+
+annoyed
+annoying
+depressed
+depressing
+excited
+exciting
+amazed
+amazing
+disappointed
+disappointing
+tired
+tiring
+embarrassed
+embarrassing
+frightened
+frightening
+bored
+boring
+frustrated
+frustrating
+
+
+## Shopping — File 8B
+// Источник: SB p.81, ex.3a ("explain the difference between…").
+
+a basket
+a trolley
+a credit card
+a debit card
+a receipt
+a refund
+a discount
+a bargain
+a chain store
+a department store
+to put on
+to try on
+to fit
+to suit
+a library
+a bookshop
+
+
+## Making Nouns From Verbs — File 8B
+// Источник: SB Vocabulary Bank p.164, часть 1. Взято целиком, включая
+// и глагол, и существительное.
+// Исключение: "value" — глагол и существительное пишутся одинаково,
+// оставлена одна карточка вместо двух одинаковых.
+
+to achieve
+achievement
+to agree
+agreement
+to argue
+argument
+to attach
+attachment
+to choose
+choice
+to compensate
+compensation
+to complain
+complaint
+to consider
+consideration
+to deliver
+delivery
+to demonstrate
+demonstration
+to explain
+explanation
+to fail
+failure
+to improve
+improvement
+to lose
+loss
+to manage
+management
+to pay
+payment
+to respond
+response
+to sell
+sale
+to serve
+service
+to succeed
+success
+to tempt
+temptation
+to treat
+treatment
+value
+
+
+## Making Adjectives And Adverbs — File 9A
+// Источник: SB Vocabulary Bank p.164, часть 2. Взято целиком: существительное
+// + положительная/отрицательная форма прилагательного и наречия.
+
+luck
+lucky
+unlucky
+luckily
+unluckily
+fortune
+fortunate
+unfortunate
+fortunately
+unfortunately
+comfort
+comfortable
+uncomfortable
+comfortably
+uncomfortably
+patience
+patient
+impatient
+patiently
+impatiently
+care
+careful
+careless
+carefully
+carelessly
+
+
+## Electronic Devices — File 9B
+// Источник: SB p.90, ex.1. Объединены сами устройства и фразовые глаголы
+// из того же упражнения.
+
+an adaptor
+a charger
+a keyboard
+a memory stick
+a mouse
+a plug
+a printer
+a remote control
+a router
+a socket
+a speaker
+a switch
+a USB cable
+to switch on
+to switch off
+to plug in
+to unplug
+to install
+to delete
+to update
+to turn up
+to turn down
+to set
+
+
+## Compound Nouns — File 10A
+// Источник: SB p.98–99, тексты "The year our heroes died" и "British
+// Design Classics". Упражнение 10A ex.7.
+
+a cycle lane
+a traffic jam
+a memory stick
+a paperback
+a book cover
+a child prodigy
+a car manufacturer
+a desk lamp
+a songwriter
+a phone box

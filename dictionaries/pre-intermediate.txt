@@ -1,0 +1,548 @@
+// Словарь уровня Pre-Intermediate для игры Alias.
+// Сконвертировано автоматически из исходного файла преподавателя.
+// Формат: '## Категория' начинает раздел, слова — по одному на строку,
+// строки с '//' игнорируются игрой.
+
+## Describing People: Appearance & Personality
+// Источник: SB p.150.
+
+curly hair
+straight hair
+blonde hair
+a beard
+a moustache
+bald
+tall
+thin
+medium height
+slim
+short
+overweight
+good-looking
+friendly
+unfriendly
+talkative
+quiet
+generous
+mean
+kind
+unkind
+lazy
+hard-working
+funny
+serious
+clever
+stupid
+shy
+extrovert
+
+
+## Things You Wear
+// Источник: SB p.151.
+
+a blouse
+a cardigan
+a coat
+a dress
+a jacket
+jeans
+leggings
+pyjamas
+a shirt
+a skirt
+socks
+a suit
+a sweater
+tights
+a top
+a tracksuit
+trousers
+a T-shirt
+underwear
+boots
+flip-flops
+sandals
+shoes
+trainers
+a belt
+a cap
+a hat
+gloves
+a scarf
+a tie
+a bracelet
+earrings
+a necklace
+a ring
+
+
+## Holidays
+// Источник: SB p.152.
+
+abroad
+by bus
+by car
+by plane
+by train
+camping
+a walk
+holiday (vacation)
+to go out
+sightseeing
+skiing
+walking
+cycling
+swimming
+sailing
+surfing
+fishing
+to stay in a hotel
+to take photos
+souvenirs
+to sunbathe
+to book a flight
+to hire a bike
+to rent an apartment
+to spend money
+comfortable
+luxurious
+basic
+dirty
+uncomfortable
+friendly
+helpful
+unfriendly
+unhelpful
+beautiful
+lovely
+noisy
+crowded
+warm
+sunny
+windy
+foggy
+cloudy
+
+
+## Housework, Make Or Do?
+// Источник: SB p.154.
+
+to clean the floor
+to do the ironing
+to go shopping
+to do the vacuuming
+to do the washing
+to do the washing-up
+to dust the furniture
+to lay the table
+to load the dishwasher
+to make lunch
+to make the bed
+to pick up dirty clothes
+to put away your clothes
+to take out the rubbish
+to tidy your room
+to do a course
+to make a mistake
+to do an exam
+to make a noise
+to make a phone call
+to do housework
+to make friends
+to do sport
+to make plans
+to make an excuse
+
+
+## Shopping
+// Источник: SB p.155.
+
+a basket
+a changing room
+a checkout
+a customer
+a receipt
+shelves (singular shelf)
+a shop assistant
+a shopping bag
+the sales
+a till
+a trolley
+an account
+an auction
+a debit card
+a delivery
+an item
+a payment
+a website
+
+
+## Describing A Town Or City
+// Источник: SB p.156.
+
+boring
+exciting
+crowded
+empty
+dangerous
+safe
+modern
+historic
+noisy
+quiet
+polluted
+clean
+a bridge
+a canal
+a castle
+a cathedral
+a church
+city walls
+a department store
+a harbour
+a hill
+a lake
+a market
+a mosque
+a museum
+a palace
+ruins
+a shopping centre (mall)
+a statue
+a synagogue
+a temple
+a town hall
+
+
+## Opposite Verbs
+// Источник: SB p.157.
+
+to arrive
+to leave
+to break (your phone)
+to mend (your phone)
+to buy
+to sell
+to download
+to upload
+to find
+to lose
+to forget
+to remember
+to lend
+to borrow
+to love
+to hate
+to miss (a train)
+to catch (a train)
+to pass (an exam)
+to fail (an exam)
+to pick up (somebody)
+to drop off (somebody)
+to push
+to pull
+to send (an email)
+to receive (an email)
+to start
+to finish
+to teach
+to learn
+to turn on (the TV)
+to turn off (the TV)
+to win
+
+
+## Confusing Verbs
+// Источник: SB p.160. 12 пар похожих по смыслу глаголов. Объекты оставлены
+// у всех слов намеренно — без уточнения теряется смысл контраста.
+// "to lend"/"to borrow" также встречаются в категории 7 (Opposite verbs) —
+// дублирование из самого учебника (разные страницы VB), оставлено как есть.
+
+to wear (clothes)
+to carry (a bag)
+to win (a match)
+to earn (money)
+to know (somebody)
+to meet (somebody for the first time)
+to hope (something good happens)
+to wait (for a bus)
+to watch (TV)
+to look at (a photo)
+to look (happy)
+to look like (your mother)
+to miss (the bus)
+to lose (your glasses)
+to bring (your dictionary)
+to take (an umbrella)
+to look for (your glasses)
+to find (a job)
+to say (sorry)
+to tell (a joke)
+to lend (money)
+to borrow (money)
+to hear (a noise)
+to listen to (music)
+
+
+## Animals And Insects
+// Источник: SB p.161. Insects, Farm animals, Wild animals, Sea animals.
+
+a bee
+a butterfly
+a fly
+a mosquito
+a spider
+a wasp
+a bull
+a chicken
+a cow
+a goat
+a horse
+a pig
+a sheep
+a bat
+a bear
+a bird
+a camel
+a crocodile
+a deer
+an elephant
+a giraffe
+a kangaroo
+a lion
+a monkey
+a mouse
+a rabbit
+a rat
+a snake
+a tiger
+a dolphin
+a jellyfish
+a shark
+a whale
+
+
+## Phrasal Verbs — Vb Часть A
+// Источник: SB p.163, часть a. Часть b той же страницы — список повторения
+// фразовых глаголов из Files 1–10, в игру не включён.
+
+to be over
+to go off (an alarm)
+to set off
+to give up
+to throw away
+to turn down
+to turn up
+to look up
+to fill in
+to find out
+to put on
+to take off
+to look after
+to look forward to
+
+
+## Common Verb Phrases — File 1A
+// Источник: SB p.6, упражнение "Getting to know you" + answer key TG.
+// Оставлены только фразы с конкретным объектом (без слишком общих
+// "to do", "to have", "to live" по отдельности).
+
+to have brothers and sisters
+to have a pet
+to get up (early / late)
+to go to bed
+to have lunch
+to learn a language
+to speak a language
+to listen to music
+to watch TV
+to do sport
+to read a magazine
+to go to the cinema
+
+
+## Relationship Status & Dating — File 1B
+// Источник: SB p.8 (текст "Please date my dad!") и p.9 (форма "Do you
+// know somebody who is looking for a partner?"). Single/Divorced/
+// Separated — варианты в форме на p.9.
+
+single
+divorced
+separated
+remarried
+a partner
+a gentleman
+romantic
+
+
+## Story Verb Phrases — File 2C
+// Источник: SB p.19, история про Hannah и Jamie. Формат: глагол + продолжение фразы в скобках.
+
+to invite (somebody to dinner)
+to have (a great time)
+to drive (along the high street)
+to meet (somebody in a coffee bar)
+to give (somebody your phone number)
+to wait (for somebody)
+to be (in a hurry)
+to play (a song)
+to leave (the club very late)
+to take (somebody to a restaurant)
+to run (across the road)
+
+
+## Airports — File 3A
+// Источник: SB p.22, часть 1 (airport signs) + часть 3 (air travel words).
+
+arrivals
+bag drop
+baggage reclaim
+check-in
+customs
+departures
+gates
+lifts
+passport control
+security check
+a terminal
+a trolley
+a stopover (AmE layover)
+a connecting flight
+a departure lounge
+a duty-free shop
+an air traveller
+
+
+## Adjectives Ending -Ed And -Ing — File 4C
+// Источник: SB p.34, "#greatweekend". 6 пар.
+
+bored
+boring
+depressed
+depressing
+relaxed
+relaxing
+interested
+interesting
+excited
+exciting
+frightened
+frightening
+
+
+## Health And The Body — File 5C
+// Источник: SB p.42.
+
+a liver
+a heart
+teeth
+muscles
+bones
+blood
+a heart attack
+blood pressure
+
+
+## Verb + Back — File 6B
+// Источник: SB p.49.
+
+to come back
+to go back
+to call somebody back
+to take something back
+to send something back
+to pay somebody back
+to give something back
+
+
+## Adverbs Of Manner — File 8C
+// Источник: SB p.66–67, история "Girl" (O. Henry) + упражнение на
+// образование наречий.
+
+dreamily
+slowly
+completely
+masterfully
+calmly
+suddenly
+angrily
+lazily
+quietly
+sadly
+seriously
+
+
+## Words Related To Fear — File 9B
+// Источник: SB p.72, "Fearof.net".
+
+a phobia
+fear
+afraid
+frightened
+terrified
+scared
+anxious
+dizzy
+to panic
+to suffer from
+
+
+## Sports — File 10A
+// Источник: SB p.78.
+
+athletics
+baseball
+basketball
+cycling
+football
+gymnastics
+handball
+karate
+rugby
+skiing
+tennis
+volleyball
+windsurfing
+yoga
+
+
+## Nationalities — File 10C
+// Источник: SB p.82, "International inventions".
+
+American
+Chinese
+Swiss
+French
+Belgian
+Italian
+Dutch
+English
+Spanish
+Brazilian
+Russian
+Turkish
+Argentinian
+Polish
+Japanese
+
+
+## Practical English — Restaurants — Episode 2
+// Источник: SB p.28, "Restaurant quiz" + answer key TG.
+
+a menu
+courses
+a waiter
+a waitress
+a bill
+a tip
+
+
+## Practical English — Feeling Ill — Episode 4
+// Источник: SB p.60.
+
+a headache
+a cough
+flu
+a temperature
+a bad stomach
+a cold

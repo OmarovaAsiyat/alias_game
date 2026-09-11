@@ -1,0 +1,1183 @@
+:root {
+  /* neutral grays — no blue cast, dark is just "darker than black-black" */
+  --bg: #262626;
+  --surface: #303030;
+  --border: #414141;
+  --text: #eeeeee;
+  --muted: #7a7a7a;
+  --accent-ink: #1a1a1a;
+
+  --lvl-elementary: #FF4661;
+  --lvl-preint: #2DD4F0;
+  --lvl-intermediate: #C8F53A;
+  --lvl-intplus: #FF6EC7;
+  --lvl-upperint: #FFA23A;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  touch-action: manipulation;
+}
+
+/* IMPORTANT: body is a normal block, NOT a centering flex box.
+   That's what stops the "have to zoom out" problem — when a screen's
+   content is taller than the viewport it just flows and the page
+   scrolls, instead of being vertically clipped by flex centering. */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+}
+
+/* ═══ SCREEN SYSTEM ═══ */
+.screen {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: env(safe-area-inset-top) calc(24px + env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) calc(24px + env(safe-area-inset-left));
+  padding-top: max(28px, env(safe-area-inset-top));
+  min-height: 100vh;
+  min-height: 100dvh;
+  justify-content: center;
+  animation: fadeIn 0.35s ease;
+}
+
+.screen.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ══════════════ MENU ══════════════ */
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  gap: 0;
+  text-align: center;
+}
+
+.wordmark {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: 450px;
+  margin-top: 228px;
+  line-height: 0.9;
+  letter-spacing: -4px;
+  display: flex;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: wordIn 0.7s cubic-bezier(.2, .7, .3, 1) 0.1s forwards;
+}
+
+.wordmark span {
+  display: inline-block;
+  position: relative;
+}
+
+.wordmark span.a1 {
+  color: var(--lvl-elementary);
+  text-shadow: 0 0 26px rgba(255, 70, 97, 0.35);
+}
+
+.wordmark span.l {
+  color: var(--lvl-preint);
+  text-shadow: 0 0 26px rgba(45, 212, 240, 0.35);
+}
+
+.wordmark span.i {
+  color: var(--lvl-intermediate);
+  text-shadow: 0 0 26px rgba(200, 245, 58, 0.30);
+}
+
+.wordmark span.a2 {
+  color: var(--lvl-intplus);
+  text-shadow: 0 0 26px rgba(255, 110, 199, 0.35);
+}
+
+.wordmark span.s {
+  color: var(--lvl-upperint);
+  text-shadow: 0 0 26px rgba(255, 162, 58, 0.35);
+}
+
+@keyframes wordIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes subIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.cta-wrap {
+  position: relative;
+  margin-top: clamp(40px, 10vh, 143px);
+  opacity: 0;
+  transform: scale(0.85);
+  animation: ctaIn 0.45s cubic-bezier(.3, 1.6, .4, 1) 1.0s forwards;
+}
+
+.cta {
+  position: relative;
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(40px, 5vh, 143px);
+  line-height: 1;
+  letter-spacing: 0.05em;
+  color: var(--text);
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 10px 6px;
+  white-space: nowrap;
+  animation: ctaBlink 1.3s steps(1) 1.5s infinite;
+}
+
+.cta.press {
+  animation: ctaPress 0.4s ease;
+}
+
+.cta-cursor {
+  width: 8px;
+  height: 15px;
+  background: var(--text);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+@keyframes ctaIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ctaBlink {
+
+  0%,
+  55% {
+    opacity: 1;
+  }
+
+  56%,
+  100% {
+    opacity: 0.25;
+  }
+}
+
+@keyframes ctaPress {
+  0% {
+    transform: scale(1);
+  }
+
+  40% {
+    transform: scale(0.86);
+  }
+
+  70% {
+    transform: scale(1.06);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.credit {
+  text-align: center;
+  font-size: clamp(28px, 7vh, 50px);
+  line-height: 1;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  opacity: 0.55;
+  margin-top: clamp(50px, 14vh, 199px);
+}
+
+
+
+/* ═══ click rays (the "тык" burst) — sits in its own layer above
+   whatever button triggered it, and never gets covered mid-animation
+   because we always wait for it to finish before changing screens ═══ */
+.rays {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.ray {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 3px;
+  height: 12px;
+  border-radius: 2px;
+  background: var(--ray-color, var(--text));
+  opacity: 0;
+  transform: translate(-50%, -50%) rotate(var(--ang)) translateY(-16px) scaleY(1);
+}
+
+.rays.burst .ray {
+  animation: rayOut 0.55s cubic-bezier(.15, .7, .3, 1) forwards;
+}
+
+@keyframes rayOut {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(var(--ang)) translateY(-14px) scaleY(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(var(--ang)) translateY(-46px) scaleY(0.4);
+  }
+}
+
+/* ══════════════ WIZARD SHELL (level / settings / teams) ══════════════ */
+.wiz-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.wiz-header-top {
+  display: flex;
+  align-items: center;
+}
+
+.back-btn {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.back-btn:hover {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.back-btn:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.back-btn:disabled:hover {
+  border-color: var(--border);
+  color: var(--muted);
+}
+
+.wiz-dots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+}
+
+.wiz-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: all 0.2s;
+}
+
+.wiz-dot.done {
+  background: var(--wiz-color);
+}
+
+.wiz-dot.now {
+  background: var(--wiz-color);
+  width: 16px;
+  border-radius: 3px;
+}
+
+.wiz-title {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(24px, 6vw, 32px);
+  color: var(--wiz-color);
+  margin-bottom: 18px;
+}
+
+.gap-14 {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gap-10 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mode-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+}
+
+/* topic pills — multi-select chips for Vocabulary Bank topics */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--muted);
+  transition: all 0.15s;
+  letter-spacing: 0.02em;
+}
+
+.pill.active {
+  border-color: var(--wiz-color);
+  color: var(--wiz-color);
+  background: color-mix(in srgb, var(--wiz-color) 12%, var(--bg));
+}
+
+.pill:hover:not(.active) {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+/* level rows */
+.level-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 16px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.level-row .dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--lvl-color);
+  transition: box-shadow 0.2s;
+}
+
+.level-row .name {
+  font-size: 14px;
+  flex: 1;
+  text-align: left;
+}
+
+.level-row .edition {
+  font-size: 9.5px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.level-row.active {
+  border-color: var(--lvl-color);
+  background: var(--bg);
+}
+
+.level-row.active .dot {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--lvl-color) 25%, transparent);
+}
+
+.level-row:active {
+  transform: scale(0.99);
+}
+
+/* stepper */
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.stepper-btn {
+  width: 40px;
+  height: 40px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  flex-shrink: 0;
+}
+
+.stepper-btn:hover {
+  border-color: var(--text);
+}
+
+.stepper-val {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  min-width: 46px;
+  text-align: center;
+}
+
+/* toggle */
+.toggle-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  inset: 0;
+  background: var(--border);
+  border-radius: 24px;
+  transition: 0.2s;
+}
+
+.toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 3px;
+  bottom: 3px;
+  background: var(--muted);
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+.toggle input:checked+.toggle-slider {
+  background: var(--wiz-color);
+}
+
+.toggle input:checked+.toggle-slider::before {
+  transform: translateX(20px);
+  background: var(--accent-ink);
+}
+
+/* team rows */
+.team-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.team-dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.team-input {
+  flex: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  font-size: 14px;
+  outline: none;
+}
+
+.team-input:focus {
+  border-color: var(--wiz-color);
+}
+
+.team-count-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn-plain {
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-plain:hover {
+  border-color: var(--wiz-color);
+  color: var(--wiz-color);
+}
+
+.btn-plain:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.btn-plain:disabled:hover {
+  border-color: var(--border);
+  color: var(--text);
+}
+
+/* primary pixel CTA — Next / Play, tinted by the selected level.
+   It always sits in normal flow (never fixed/overlapping), and we
+   delay the screen change until the burst animation has finished. */
+.primary-wrap {
+  margin-top: 26px;
+  position: relative;
+}
+
+.primary-btn {
+  width: 100%;
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(11px, 3vw, 13px);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  background: var(--wiz-color);
+  border: none;
+  border-radius: 12px;
+  padding: 18px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 color-mix(in srgb, var(--wiz-color) 55%, black);
+  transform: translateY(0);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.primary-btn:active,
+.primary-btn.press {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 color-mix(in srgb, var(--wiz-color) 55%, black);
+}
+
+.hint-text {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* ══════════════ GAME SCREEN ══════════════ */
+:root {
+  --skip: #f87171;
+  --correct: #4ade80;
+  --warn: #ffb020;
+}
+
+.game-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.game-team-name {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(28px, 8vw, 36px);
+  color: var(--wiz-color);
+  line-height: 1;
+}
+
+/* pause is a bare glyph in the corner — no box, just white/dark-on-theme ink */
+.pause-icon-btn {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 6px;
+  color: var(--text);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.pause-icon-btn:hover {
+  opacity: 0.7;
+}
+
+.word-card {
+  position: relative;
+  overflow: visible;
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 32px 28px;
+  text-align: center;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* the timer now lives right on the card's edge: a track outline in the
+   resting border color, with a colored progress outline drawn on top
+   that recedes clockwise (same dash-offset technique as a circular
+   countdown ring, just traced around a rounded rect instead) */
+.timer-border-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.timer-border-track {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 3;
+}
+
+.timer-border-fill {
+  fill: none;
+  stroke: var(--wiz-color);
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1s linear;
+}
+
+.word-cat {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  background: var(--wiz-color);
+  padding: 6px 11px;
+  border-radius: 6px;
+}
+
+.word-main {
+  font-family: 'DM Serif Display', serif;
+  font-size: clamp(28px, 8vw, 42px);
+  line-height: 1.15;
+}
+
+.game-btns-wrap {
+  margin-top: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.btn-gotit-wrap {
+  position: relative;
+}
+
+.btn-gotit {
+  width: 100%;
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(13px, 4vw, 16px);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-ink);
+  background: var(--wiz-color);
+  border: none;
+  border-radius: 14px;
+  padding: 22px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 color-mix(in srgb, var(--wiz-color) 55%, black);
+  transform: translateY(0);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.btn-gotit:active,
+.btn-gotit.press {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 color-mix(in srgb, var(--wiz-color) 55%, black);
+}
+
+/* Skip — pixel font too now, but outlined/muted so it stays clearly secondary to Got it */
+.btn-skip-pixel {
+  width: 100%;
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(13px, 4vw, 16px);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: transparent;
+  border: 2px solid var(--border);
+  border-radius: 14px;
+  padding: 20px;
+  cursor: pointer;
+  box-shadow: 0 6px 0 var(--border);
+  transform: translateY(0);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.btn-skip-pixel:active,
+.btn-skip-pixel.press {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 var(--border);
+}
+
+#flash {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 998;
+  transition: opacity 0.12s;
+}
+
+/* pause overlay — sound toggle and quit live here, once you're in-game */
+.pause-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  padding: 24px;
+}
+
+.pause-overlay.show {
+  display: flex;
+}
+
+.pause-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 26px 22px;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.pause-title {
+  text-align: center;
+}
+
+.pause-squares {
+  display: flex;
+  justify-content: center;
+}
+
+.pause-square {
+  width: 64px;
+  aspect-ratio: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: var(--text);
+}
+
+.pause-square:hover {
+  border-color: var(--text);
+}
+
+.pause-square.active {
+  border-color: var(--wiz-color);
+  background: color-mix(in srgb, var(--wiz-color) 14%, var(--bg));
+}
+
+.quit-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--skip);
+  color: var(--skip);
+  border-radius: 12px;
+  padding: 15px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.quit-btn:hover {
+  background: color-mix(in srgb, var(--skip) 12%, transparent);
+}
+
+/* ══════════════ END SCREEN (winner) ══════════════ */
+.end-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.end-label {
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+  opacity: 0;
+  animation: subIn 0.5s ease 0.1s forwards;
+}
+
+.end-team {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(30px, 9vw, 48px);
+  line-height: 1.05;
+  color: var(--wiz-color);
+  text-shadow: 0 0 30px color-mix(in srgb, var(--wiz-color) 45%, transparent);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: wordIn 0.6s cubic-bezier(.2, .7, .3, 1) 0.2s forwards;
+}
+
+.trophy-stage {
+  position: relative;
+  width: min(62vw, 240px);
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px 0 2px;
+  opacity: 0;
+  transform: scale(0.7);
+  animation: trophyPop 0.6s cubic-bezier(.2, 1.4, .4, 1) 0.5s forwards;
+}
+
+@keyframes trophyPop {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.trophy-svg {
+  position: relative;
+  width: 62%;
+  height: auto;
+  z-index: 2;
+  animation:
+    trophyFloat 3.6s ease-in-out 1.1s infinite,
+    trophyGlow 3.6s ease-in-out 1.1s infinite;
+}
+
+@keyframes trophyFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes trophyGlow {
+
+  0%,
+  100% {
+    filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 0px color-mix(in srgb, var(--wiz-color) 60%, transparent));
+  }
+
+  50% {
+    filter: drop-shadow(0 20px 22px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 20px color-mix(in srgb, var(--wiz-color) 65%, transparent));
+  }
+}
+
+.end-score {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 4px;
+  opacity: 0;
+  animation: subIn 0.5s ease 0.8s forwards;
+}
+
+/* confetti — long, slow, continuous fall, layered above everything on this screen */
+.confetti-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 3;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -6%;
+  border-radius: 1px;
+  animation-name: confettiFall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes confettiFall {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+
+  6% {
+    opacity: 0.95;
+  }
+
+  92% {
+    opacity: 0.95;
+  }
+
+  100% {
+    transform: translate(var(--drift), 118vh) rotate(var(--spin));
+    opacity: 0;
+  }
+}
+
+/* ══════════════ TURN SCREEN ══════════════ */
+.turn-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 40px 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.turn-round {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.turn-team {
+  font-family: 'DM Serif Display', serif;
+  font-style: italic;
+  font-size: clamp(28px, 8vw, 40px);
+  color: var(--wiz-color);
+}
+
+.turn-cats {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+/* ══════════════ RESULTS SCREEN ══════════════ */
+.results-list {
+  max-height: 320px;
+  overflow-y: auto;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.result-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s;
+}
+
+.result-item.correct {
+  background: rgba(74, 222, 128, 0.07);
+  border-color: rgba(74, 222, 128, 0.2);
+}
+
+.result-item.skip {
+  background: rgba(248, 113, 113, 0.07);
+  border-color: rgba(248, 113, 113, 0.15);
+}
+
+.result-item:hover {
+  filter: brightness(1.15);
+}
+
+.result-word {
+  font-size: 13px;
+  font-family: 'DM Mono', monospace;
+}
+
+.result-word-cat {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+}
+
+.badge-correct {
+  background: rgba(74, 222, 128, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(74, 222, 128, 0.3);
+}
+
+.badge-skip {
+  background: rgba(248, 113, 113, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(248, 113, 113, 0.25);
+}
+
+.penalty-tag {
+  font-size: 9px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 107, 53, 0.15);
+  color: #ff6b35;
+  border: 1px solid rgba(255, 107, 53, 0.3);
+  flex-shrink: 0;
+}
+
+/* ══════════════ FINAL SCOREBOARD ══════════════ */
+.score-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.score-row.winner {
+  border-color: var(--wiz-color);
+  background: color-mix(in srgb, var(--wiz-color) 8%, var(--surface));
+}
+
+.score-val {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+}
+
+/* level-loading state on Level screen */
+.level-loading-row {
+  display: flex;
+  justify-content: center;
+  padding: 14px 0;
+}
+
+.level-spinner {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 3px solid var(--border);
+  border-top-color: var(--wiz-color, var(--text));
+  animation: levelSpin 0.8s linear infinite;
+}
+
+@keyframes levelSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.level-error-note {
+  font-size: 11px;
+  color: #f87171;
+  line-height: 1.6;
+}

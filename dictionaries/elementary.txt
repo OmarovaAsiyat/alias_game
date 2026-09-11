@@ -1,0 +1,480 @@
+// Словарь уровня Elementary для игры Alias.
+// Сконвертировано автоматически из исходного файла преподавателя.
+// Формат: '## Категория' начинает раздел, слова — по одному на строку,
+// строки с '//' игнорируются игрой.
+
+## Days Of The Week
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+Saturday
+Sunday
+weekend
+weekday
+
+
+## Countries
+Spain
+Poland
+England
+Turkey
+Scotland
+Ireland
+Mexico
+the United States
+Germany
+Brazil
+Hungary
+Egypt
+Italy
+Argentina
+Russia
+China
+Japan
+the Czech Republic
+France
+Switzerland
+Africa
+Asia
+Australia
+Europe
+North America
+South America
+north
+south
+east
+west
+
+
+## Things
+a bag
+a charger
+a coin
+a credit card
+a diary
+a dictionary
+a file
+glasses
+headphones
+an identity card
+a key
+a lamp
+a laptop
+a magazine
+a newspaper
+a notebook
+a pen
+a pencil
+a (mobile) phone
+a photo
+a piece of paper
+a purse
+scissors
+sunglasses
+a tablet
+a ticket
+a tissue
+an umbrella
+a wallet
+a watch
+
+
+## Adjectives
+// Примечание: три слова (old, right, short) в оригинале входят в две
+// разные пары антонимов. Чтобы не дублировать карточки, оставлена одна
+// карточка на слово, но с подсказкой в скобках — какая пара имеется в
+// виду. Если подсказка не нужна — просто уберите скобки при редактировании.
+
+beautiful
+ugly
+big
+small
+cheap
+expensive
+clean
+dirty
+easy
+difficult
+fast
+slow
+full
+empty
+good
+bad
+high
+low
+hot
+cold
+light
+dark
+long
+short (opp. long)
+old (opp. new)
+new
+young
+rich
+poor
+right (opp. left)
+left
+wrong
+safe
+dangerous
+the same
+different
+strong
+weak
+tall
+
+
+## Verb Phrases
+to drink
+to work
+to water
+to study
+to speak
+to live
+to read
+to like
+to go
+to watch
+to listen
+to play
+to take
+to do
+to say
+to eat
+to have
+to wear
+to want
+to drive
+
+
+## Jobs
+an accountant
+an actor
+an administrator
+an architect
+a builder
+a chef
+a cleaner
+a dentist
+a doctor
+an engineer
+a factory worker
+a flight attendant
+a footballer
+a guide
+a hairdresser
+a journalist
+a lawyer
+a (bank) manager
+a model
+a musician
+a nurse
+a pilot
+a police officer
+a receptionist
+a shop assistant
+a soldier
+a taxi driver
+a teacher
+a vet
+a waiter / a waitress
+
+
+## Family
+father
+mother
+brother
+sister
+daughter
+son
+grandfather
+grandmother
+aunt
+uncle
+nephew
+niece
+cousin
+wife
+a couple
+children
+grandparents
+parents
+parents-in-law
+mother-in-law
+sister-in-law
+stepfather
+stepmother
+partner
+
+
+## More Verb Phrases
+to dance
+to call
+to buy
+to swim
+to try
+to leave
+to look for
+to forget
+to remember
+to tell
+to send
+to talk
+to sing
+to hear
+to take
+to help
+to use
+to find
+to meet
+to paint
+to wait
+to run
+to draw
+to see
+
+
+## Weather And Seasons
+cloudy
+cold
+foggy
+hot
+raining
+snowing
+sunny
+windy
+spring
+summer
+autumn
+winter
+cool
+warm
+wet
+dry
+sun
+cloud
+wind
+fog
+
+
+## The House
+a bathroom
+a bedroom
+a dining room
+a garage
+a garden
+a hall
+a kitchen
+a living room
+a study
+a toilet
+a balcony
+a ceiling
+a floor
+stairs
+a wall
+an armchair
+a bath
+a bed
+a carpet
+a cooker
+a cupboard
+a dishwasher
+a fireplace
+a fridge
+a light
+a microwave
+a mirror
+a plant
+a shelf
+a shower
+a sofa
+a wardrobe
+a washing machine
+central heating
+air conditioning
+
+
+## Food And Drink
+bread
+butter
+cereal
+cheese
+coffee
+eggs
+jam
+milk
+sugar
+tea
+toast
+fish
+herbs
+meat
+olive oil
+pasta
+rice
+salad
+seafood
+spices
+carrots
+chips
+a lettuce
+mushrooms
+onions
+peas
+peppers
+potatoes
+tomatoes
+apples
+bananas
+oranges
+a pineapple
+strawberries
+cake
+fruit salad
+ice cream
+biscuits
+chocolate
+crisps
+nuts
+a sandwich
+sweets
+
+
+## Places And Buildings
+a chemist's
+a church
+a department store
+a hospital
+a market
+a park
+a police station
+a post office
+a shopping centre
+a supermarket
+a town hall
+an art gallery
+a castle
+a museum
+a theatre
+a zoo
+a bridge
+a river
+a road
+a square
+a street
+a bus station
+a car park
+a railway station
+
+
+## Colours — File 2B
+red
+white
+blue
+black
+yellow
+grey
+orange
+brown
+pink
+green
+purple
+silver
+gold
+
+
+## Feelings — File 2C
+angry
+bored
+cold
+frightened
+happy
+hot
+hungry
+sad
+stressed
+thirsty
+tired
+worried
+
+
+## Musical Instruments — File 6C
+accordion
+bass
+violin
+guitar
+piano
+drums
+keyboard
+trumpet
+saxophone
+
+
+## Food Containers — File 9B
+// По одному слову на карточке. Объясняющий должен назвать/показать еду, которая обычно в этом типе тары, а не сам предмет буквально.
+// Например: bottle -> "a drink container for water"
+
+a bottle
+a box
+a can
+a carton
+a jar
+a packet
+a tin
+
+
+## Phones And The Internet — File 11C
+// Названия приложений разрешено использовать как подсказку при объяснении соответствующего действия.
+
+to share
+to download
+to Skype
+to send a message
+to upload
+to message
+to post
+email
+to take a photo
+to get directions
+to read a book
+to get fitter
+to listen to a song
+wi-fi
+an attachment
+log in
+a search
+broadband
+
+
+## Practical English — In A Hotel — Episode 1
+reception
+the lift
+a single room
+a double room
+the bar
+the ground floor
+
+
+## Practical English — Clothes — Episode 3
+jeans
+a shirt
+shoes
+a sweater
+a jacket
+a skirt
+a T-shirt
+trousers
+
+
+## Practical English — Public Transport — Episode 6
+bus
+taxi
+coach
+plane
+train
+tram

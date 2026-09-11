@@ -1,0 +1,6 @@
+/* ══════════════ MENU (низкие экраны, напр. телефон в landscape) ══════════════ */
+@media (max-height: 420px) {
+  .menu { gap: 8px; }
+  .wordmark { font-size: clamp(34px, 15vh, 90px); }
+  .credit { display: none; }
+}

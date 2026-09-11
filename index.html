@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Alias for English learners</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/adaptive_style.css">
+</head>
+
+<body>
+
+  <!-- Main screen -->
+  <!-- ═══ MENU ═══ -->
+  <div class="screen active" id="screenMenu">
+    <div class="menu">
+      <div class="wordmark">
+        <span class="a1">a</span><span class="l">l</span><span class="i">i</span><span class="a2">a</span><span
+          class="s">s</span>
+      </div>
+      <div class="cta-wrap">
+        <div class="rays" id="raysMenu"></div>
+        <div class="cta" id="ctaBtn" onclick="handleStart()">start the game <span class="cta-cursor"></span></div>
+      </div>
+      <div class="credit">by QuAsi</div>
+    </div>
+  </div>
+
+  <!-- ═══ STEP 1: LEVEL ═══ -->
+  <div class="screen" id="screenLevel" style="--wiz-color:var(--lvl-preint)">
+    <div class="wiz-header">
+      <div class="wiz-header-top">
+        <button class="back-btn" onclick="burstAt(this); showScreen('screenMenu')">← Menu</button>
+      </div>
+      <div class="wiz-dots">
+        <div class="wiz-dot now"></div>
+        <div class="wiz-dot"></div>
+        <div class="wiz-dot"></div>
+        <div class="wiz-dot"></div>
+        <div class="wiz-dot"></div>
+      </div>
+    </div>
+    <div class="wiz-title">Choose your level</div>
+    <div class="gap-10" id="levelList"></div>
+    <div class="level-loading-row" id="levelLoadingRow" style="display:none">
+      <div class="level-spinner"></div>
+    </div>
+    <div class="level-error-note" id="levelErrorNote" style="display:none;margin-top:10px"></div>
+    <div class="primary-wrap">
+      <div class="rays" id="raysLevel"></div>
+      <button class="primary-btn" id="btnLevelNext" onclick="handleLevelNext()">Next</button>
+    </div>
+  </div>
+
+  <!-- ═══ STEP 2: TOPICS (Vocabulary Bank) ═══ -->
+  <div class="screen" id="screenTopics">
+    <div class="wiz-header">
+      <div class="wiz-header-top">
+        <button class="back-btn" onclick="burstAt(this); showScreen('screenLevel')">← Back</button>
+      </div>
+      <div class="wiz-dots">
+        <div class="wiz-dot done"></div>
+        <div class="wiz-dot now"></div>
+        <div class="wiz-dot"></div>
+        <div class="wiz-dot"></div>
+      </div>
+    </div>
+    <div class="wiz-title">Choose your topics</div>
+    <div class="card gap-10">
+      <div class="team-count-row">
+        <div class="mode-label">Vocabulary Bank</div>
+        <button class="btn-plain" id="topicsSelectAllBtn" onclick="burstAt(this); toggleAllTopics()">Select All</button>
+      </div>
+      <div class="pills" id="topicPills"></div>
+    </div>
+    <div class="hint-text" style="margin-top:14px" id="topicsHint">Words are loaded from the dictionary file for this
+      level.</div>
+    <div class="primary-wrap">
+      <div class="rays" id="raysTopics"></div>
+      <button class="primary-btn" id="btnTopicsNext" onclick="handleTopicsNext(this)">Next</button>
+    </div>
+  </div>
+
+  <!-- ═══ STEP 3: ROUND SETTINGS ═══ -->
+  <div class="screen" id="screenSettings">
+    <div class="wiz-header">
+      <div class="wiz-header-top">
+        <button class="back-btn" onclick="burstAt(this); showScreen('screenTopics')">← Back</button>
+      </div>
+      <div class="wiz-dots">
+        <div class="wiz-dot done"></div>
+        <div class="wiz-dot done"></div>
+        <div class="wiz-dot now"></div>
+        <div class="wiz-dot"></div>
+      </div>
+    </div>
+    <div class="wiz-title">Round settings</div>
+
+    <div class="gap-14">
+      <div class="card gap-10">
+        <div class="mode-label">Time per round</div>
+        <div class="stepper">
+          <button class="stepper-btn" onclick="burstAt(this); adjTimer(-10)">−</button>
+          <span class="stepper-val" id="timerVal">60</span>
+          <span style="font-size:12px;color:var(--muted)">sec</span>
+          <button class="stepper-btn" onclick="burstAt(this); adjTimer(10)">+</button>
+        </div>
+      </div>
+
+      <div class="card gap-10">
+        <div class="mode-label">Rounds</div>
+        <div class="stepper">
+          <button class="stepper-btn" onclick="burstAt(this); adjRounds(-1)">−</button>
+          <span class="stepper-val" id="roundsVal">3</span>
+          <button class="stepper-btn" onclick="burstAt(this); adjRounds(1)">+</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="toggle-wrap">
+          <div>
+            <div class="mode-label" style="margin-bottom:4px">Penalty for skip</div>
+            <div class="hint-text">Each ✕ skipped word deducts 1 point</div>
+          </div>
+          <label class="toggle">
+            <input type="checkbox" id="penaltyToggle">
+            <span class="toggle-slider"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="primary-wrap">
+      <div class="rays" id="raysSettings"></div>
+      <button class="primary-btn" id="btnSettingsNext"
+        onclick="handleNext('screenTeams', this, 'raysSettings')">Next</button>
+    </div>
+  </div>
+
+  <!-- ═══ STEP 3: TEAMS ═══ -->
+  <div class="screen" id="screenTeams">
+    <div class="wiz-header">
+      <div class="wiz-header-top">
+        <button class="back-btn" onclick="burstAt(this); showScreen('screenSettings')">← Back</button>
+      </div>
+      <div class="wiz-dots">
+        <div class="wiz-dot done"></div>
+        <div class="wiz-dot done"></div>
+        <div class="wiz-dot done"></div>
+        <div class="wiz-dot now"></div>
+      </div>
+    </div>
+    <div class="wiz-title">Teams</div>
+
+    <div class="gap-14">
+      <div class="card gap-10">
+        <div class="team-count-row">
+          <div class="mode-label">Number of teams</div>
+          <div style="display:flex;gap:8px">
+            <button class="btn-plain" id="btnRemoveTeam" onclick="burstAt(this); removeTeam()">− Remove</button>
+            <button class="btn-plain" id="btnAddTeam" onclick="burstAt(this); addTeam()">+ Add</button>
+          </div>
+        </div>
+      </div>
+      <div class="gap-10" id="teamsList"></div>
+      <div class="hint-text">Min 2 · Max 6 teams</div>
+    </div>
+
+    <div class="primary-wrap">
+      <div class="rays" id="raysTeams"></div>
+      <button class="primary-btn" id="btnPlay" onclick="handlePlay()">Play</button>
+    </div>
+  </div>
+
+  <!-- ═══ TURN INTRO SCREEN ═══ -->
+  <div class="screen" id="screenTurn">
+    <div style="display:flex;flex-direction:column;gap:22px;min-height:70vh;justify-content:center">
+      <div class="turn-card">
+        <div class="turn-round" id="turnRoundLabel">Round 1 of 3</div>
+        <div class="turn-team" id="turnTeamName">Team A</div>
+        <div class="mode-label">It's your turn!</div>
+        <div class="turn-cats" id="turnCatList"></div>
+      </div>
+      <div class="hint-text" style="text-align:center">Describe each word without saying it. Your team guesses as many
+        as possible.</div>
+      <div class="primary-wrap">
+        <div class="rays" id="raysTurn"></div>
+        <button class="primary-btn" id="btnTurnReady"
+          onclick="handleNext('screenGame', this, 'raysTurn'); beginTurn()">Ready</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ GAME SCREEN ═══ -->
+  <div id="flash"></div>
+  <div class="screen" id="screenGame">
+    <div class="game-header">
+      <div>
+        <div class="mode-label" id="gameRoundLabel">Round 1 · Team A</div>
+        <div class="game-team-name" id="gameTeamName">Team A</div>
+      </div>
+      <button class="pause-icon-btn" onclick="burstAt(this); openPause()" title="Pause">⏸</button>
+    </div>
+
+    <div class="word-card" id="wordCard">
+      <svg class="timer-border-svg" id="timerBorderSvg">
+        <rect class="timer-border-track" id="timerBorderTrack" />
+        <rect class="timer-border-fill" id="timerBorderFill" />
+      </svg>
+      <div class="word-cat" id="wordCat">Animals</div>
+      <div class="word-main" id="wordMain">lion</div>
+    </div>
+
+    <div class="game-btns-wrap">
+      <div class="btn-gotit-wrap" id="gotWrap">
+        <button class="btn-gotit" id="btnGot" onclick="burstAt(this); handleGot()">Got it</button>
+      </div>
+      <button class="btn-skip-pixel" id="btnSkip" onclick="burstAt(this); handleSkip()">Skip</button>
+    </div>
+  </div>
+
+  <!-- ═══ RESULTS SCREEN ═══ -->
+  <div class="screen" id="screenResults">
+    <div class="wiz-header">
+      <div class="wiz-header-top">
+        <div class="mode-label" id="resultsRoundLabel">Round 1 · Results</div>
+      </div>
+    </div>
+    <div class="wiz-title" id="resultsTeamName" style="margin-bottom:12px">Team A</div>
+    <div class="card" id="roundScoreSummary" style="margin-bottom:16px"></div>
+    <div class="mode-label" style="margin-bottom:10px">Tap to toggle ✓ / ✕</div>
+    <div class="results-list" id="resultsList"></div>
+    <div class="hint-text" style="margin-top:14px">Review skipped words with your class. Tap any word to correct a
+      mis-click.</div>
+    <div class="primary-wrap">
+      <div class="rays" id="raysResults"></div>
+      <button class="primary-btn" id="resultsNextBtn" onclick="handleResultsNext(this)">Next Team</button>
+    </div>
+  </div>
+
+  <!-- ═══ END SCREEN ═══ -->
+  <div class="screen" id="screenEnd">
+    <div class="end-wrap">
+      <div class="end-label">winner</div>
+      <div class="end-team" id="endTeamName">Team A</div>
+      <div class="trophy-stage">
+        <img class="trophy-svg" id="trophyImg" alt="Trophy" />
+      </div>
+      <div class="end-score" id="endScore">0 points</div>
+      <div class="gap-10" id="finalScores" style="width:100%;max-width:340px;margin-top:6px"></div>
+      <div class="primary-wrap">
+        <div class="rays" id="raysEnd"></div>
+        <button class="primary-btn" id="btnPlayAgain" onclick="handlePlayAgain()">Play again</button>
+      </div>
+    </div>
+    <div class="confetti-layer" id="confettiLayer"></div>
+  </div>
+
+  <div class="pause-overlay" id="pauseOverlay">
+    <div class="pause-card">
+      <div class="mode-label pause-title">Paused</div>
+      <div class="pause-squares">
+        <button class="pause-square" id="soundSquare" onclick="burstAt(this); togglePauseSound()"
+          title="Sound on / off">🔊</button>
+      </div>
+      <button class="primary-btn" onclick="burstAt(this); closePause()">Resume</button>
+      <button class="quit-btn" id="quitBtn" onclick="burstAt(this); handleQuit()">Quit</button>
+    </div>
+  </div>
+
+  <script src="scripts/state.js"></script>
+  <script src="scripts/audio.js"></script>
+  <script src="scripts/effects.js"></script>
+  <script src="scripts/dictionary.js"></script>
+  <script src="scripts/navigation.js"></script>
+  <script src="scripts/game.js"></script>
+  <script src="scripts/results.js"></script>
+  <script src="scripts/pause.js"></script>
+  <script src="scripts/endgame.js"></script>
+</body>
+
+</html>
