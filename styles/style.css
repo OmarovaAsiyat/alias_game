@@ -497,6 +497,25 @@ body::before {
   text-align: center;
 }
 
+/* the round-length stepper gets the same pixel-badge look as the
+   in-game countdown (staircase clip-path, theme color) — rounds count
+   stays the plain serif number above */
+#timerVal {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  color: var(--accent-ink);
+  background: var(--wiz-color);
+  padding: 8px 14px;
+  display: inline-block;
+  clip-path: polygon(
+    0 5px, 5px 5px, 5px 0,
+    calc(100% - 5px) 0, calc(100% - 5px) 5px, 100% 5px,
+    100% calc(100% - 5px), calc(100% - 5px) calc(100% - 5px), calc(100% - 5px) 100%,
+    5px 100%, 5px calc(100% - 5px), 0 calc(100% - 5px)
+  );
+}
+
 /* toggle */
 .toggle-wrap {
   display: flex;
@@ -866,23 +885,30 @@ body::before {
   text-align: center;
 }
 
+/* same pixel-button family as Skip — 3D press, just tinted danger-red
+   instead of the neutral outline, so it still reads as the "leave"
+   action */
 .quit-btn {
   width: 100%;
-  background: transparent;
-  border: 1px solid var(--skip);
-  color: var(--skip);
-  border-radius: 12px;
-  padding: 15px;
-  font-family: 'DM Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 0.06em;
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(13px, 4vw, 16px);
+  letter-spacing: 0.05em;
   text-transform: uppercase;
+  color: var(--skip);
+  background: transparent;
+  border: 2px solid var(--skip);
+  border-radius: 14px;
+  padding: 20px;
   cursor: pointer;
-  transition: all 0.15s;
+  box-shadow: 0 6px 0 color-mix(in srgb, var(--skip) 55%, black);
+  transform: translateY(0);
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
 }
 
-.quit-btn:hover {
-  background: color-mix(in srgb, var(--skip) 12%, transparent);
+.quit-btn:active,
+.quit-btn.press {
+  transform: translateY(6px);
+  box-shadow: 0 0 0 color-mix(in srgb, var(--skip) 55%, black);
 }
 
 /* ══════════════ END SCREEN (winner) ══════════════ */
