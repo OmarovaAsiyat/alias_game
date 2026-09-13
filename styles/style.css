@@ -586,20 +586,20 @@ body::before {
   align-items: center;
   justify-content: center;
   background: transparent;
-  border: 1px solid var(--border);
-  color: var(--muted);
-  border-radius: 8px;
-  font-size: 13px;
+  border: none;
+  padding: 0;
+  color: var(--text);
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
   cursor: pointer;
 }
 
-.team-remove-btn:hover {
-  border-color: var(--wiz-color);
-  color: var(--wiz-color);
+.team-remove-btn:not(:disabled):hover {
+  opacity: 0.7;
 }
 
 .team-remove-btn:disabled {
-  opacity: 0.3;
+  color: var(--muted);
   cursor: default;
 }
 
@@ -697,21 +697,26 @@ body::before {
   line-height: 1;
 }
 
-/* pause is a bare glyph in the corner — no box, just white/dark-on-theme ink */
+/* pause trigger — square block, matches the pause-menu squares */
 .pause-icon-btn {
   flex-shrink: 0;
-  background: none;
-  border: none;
-  padding: 6px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
   color: var(--text);
-  font-size: 22px;
+  font-size: 18px;
   line-height: 1;
   cursor: pointer;
-  transition: opacity 0.15s;
+  transition: border-color 0.15s;
 }
 
 .pause-icon-btn:hover {
-  opacity: 0.7;
+  border-color: var(--text);
 }
 
 .word-card {
@@ -870,35 +875,6 @@ body::before {
 
 .pause-title {
   text-align: center;
-}
-
-.pause-squares {
-  display: flex;
-  justify-content: center;
-}
-
-.pause-square {
-  width: 64px;
-  aspect-ratio: 1;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  font-size: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.15s;
-  color: var(--text);
-}
-
-.pause-square:hover {
-  border-color: var(--text);
-}
-
-.pause-square.active {
-  border-color: var(--wiz-color);
-  background: color-mix(in srgb, var(--wiz-color) 14%, var(--bg));
 }
 
 .quit-btn {

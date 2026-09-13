@@ -615,7 +615,6 @@ function playNeutralTick() {
 // corner toggle, plus a Quit that needs a second tap to confirm ═══
 function openPause() {
   isPaused = true;
-  syncPauseIcons();
   resetQuitArm();
   document.getElementById('pauseOverlay').classList.add('show');
 }
@@ -623,16 +622,6 @@ function closePause() {
   isPaused = false;
   resetQuitArm();
   document.getElementById('pauseOverlay').classList.remove('show');
-}
-function togglePauseSound() {
-  soundOn = !soundOn;
-  syncPauseIcons();
-  if (soundOn) { ensureAudio(); playCoinSound(); }
-}
-function syncPauseIcons() {
-  const soundSq = document.getElementById('soundSquare');
-  soundSq.textContent = soundOn ? '🔊' : '🔇';
-  soundSq.classList.toggle('active', !soundOn);
 }
 
 let quitArmed = false;
