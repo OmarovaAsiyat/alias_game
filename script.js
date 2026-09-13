@@ -390,8 +390,6 @@ function goToTurnScreen() {
   const team = teams[currentTeamIdx];
   document.getElementById('turnRoundLabel').textContent = `Round ${currentRound} of ${roundsVal}`;
   document.getElementById('turnTeamName').textContent = team.name;
-  const catNames = selectedTopics.map(id => CATEGORIES.find(c => c.id === id)?.label).filter(Boolean).join(', ');
-  document.getElementById('turnCatList').textContent = catNames;
   showScreen('screenTurn');
 }
 
