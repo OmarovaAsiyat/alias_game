@@ -398,9 +398,6 @@ function beginTurn() {
   turnWords = [];
   gameTimeLeft = timerVal;
   timeIsUp = false;
-  const team = teams[currentTeamIdx];
-  document.getElementById('gameRoundLabel').textContent = `Round ${currentRound} · ${team.name}`;
-  document.getElementById('gameTeamName').textContent = team.name;
   loadNextWord();
   updateTimerUI();
   if (gameTimerInterval) clearInterval(gameTimerInterval);
@@ -428,13 +425,16 @@ function loadNextWord() {
   document.getElementById('wordMain').textContent = currentWordObj.word;
 }
 
-// pixel-style digital countdown in the header — plain text, no
-// measuring/animating an SVG outline anymore
+// pixel-style digital countdown, MM:SS, always the Got-it-style pill —
+// no more measuring/animating an SVG outline
+function formatTime(totalSeconds) {
+  const s = Math.max(0, totalSeconds);
+  const m = Math.floor(s / 60);
+  const sec = s % 60;
+  return `${m}:${String(sec).padStart(2, '0')}`;
+}
 function updateTimerUI() {
-  const el = document.getElementById('gameTimer');
-  const secs = Math.max(0, gameTimeLeft);
-  el.textContent = secs;
-  el.classList.toggle('time-up', secs <= 0);
+  document.getElementById('gameTimer').textContent = formatTime(gameTimeLeft);
 }
 
 function pressBtn(id) {

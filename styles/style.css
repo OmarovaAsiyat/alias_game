@@ -682,44 +682,32 @@ body::before {
 }
 
 .game-header {
-  display: flex;
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
   align-items: center;
-  justify-content: space-between;
   gap: 12px;
   margin-bottom: 24px;
 }
 
-.game-team-name {
-  font-family: 'DM Serif Display', serif;
-  font-style: italic;
-  font-size: clamp(28px, 8vw, 36px);
-  color: var(--wiz-color);
-  line-height: 1;
-}
-
-/* pixel digital countdown — same square-block family as the pause
-   trigger, colored by the level theme; turns to the skip-red once time
-   runs out (the last word then stays on screen until Got it/Skip) */
-.game-timer {
-  flex-shrink: 0;
-  min-width: 52px;
+.game-header-spacer {
+  width: 40px;
   height: 40px;
-  padding: 0 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  font-family: 'Press Start 2P', monospace;
-  font-size: 14px;
-  color: var(--wiz-color);
-  transition: border-color 0.15s, color 0.15s;
 }
 
-.game-timer.time-up {
-  color: var(--skip);
-  border-color: var(--skip);
+/* big pixel countdown pill, MM:SS — same 3D-press family as the
+   Got-it/Skip buttons (pixel font, filled background, edge shadow),
+   just always the alert-red so it reads as "this is the clock" */
+.game-timer {
+  justify-self: center;
+  font-family: 'Press Start 2P', monospace;
+  font-size: clamp(20px, 7vw, 30px);
+  letter-spacing: 0.05em;
+  color: var(--accent-ink);
+  background: var(--skip);
+  border: none;
+  border-radius: 14px;
+  padding: 12px 26px;
+  box-shadow: 0 6px 0 color-mix(in srgb, var(--skip) 55%, black);
 }
 
 /* pause trigger — square block, matches the pause-menu squares */
