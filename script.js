@@ -421,7 +421,7 @@ function loadNextWord() {
   }
   currentWordObj = getNextWord();
   usedWords.add(currentWordObj.word);
-  document.getElementById('wordCat').textContent = currentWordObj.cat;
+  document.getElementById('wordCat').textContent = formatTopicLabel(currentWordObj.cat);
   document.getElementById('wordMain').textContent = currentWordObj.word;
 }
 
