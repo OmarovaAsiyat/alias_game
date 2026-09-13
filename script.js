@@ -494,8 +494,8 @@ function renderRoundSummary() {
   el.innerHTML = `
     <div class="team-count-row" style="flex-wrap:wrap;gap:10px">
       <div style="display:flex;gap:18px;flex-wrap:wrap">
-        <div><div class="mode-label">Correct</div><div style="font-family:'DM Serif Display',serif;font-size:26px;color:#4ade80">${correct}</div></div>
-        <div><div class="mode-label">Skipped</div><div style="font-family:'DM Serif Display',serif;font-size:26px;color:#f87171">${skipped}</div></div>
+        <div><div class="mode-label">Correct</div><div style="font-family:'DM Serif Display',serif;font-size:26px;color:var(--wiz-color)">${correct}</div></div>
+        <div><div class="mode-label">Skipped</div><div style="font-family:'DM Serif Display',serif;font-size:26px;color:var(--muted)">${skipped}</div></div>
         ${penaltyOn ? `<div><div class="mode-label">Penalty</div><div style="font-family:'DM Serif Display',serif;font-size:26px;color:#ff6b35">−${penalty}</div></div>` : ''}
       </div>
       <div>
