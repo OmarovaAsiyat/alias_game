@@ -567,7 +567,18 @@ function handleResultsNext(btn) {
 
 function nextTurn() {
   const isLast = (currentRound === roundsVal && currentTeamIdx === teams.length - 1);
-  if (isLast) { showEndScreen(); return; }
+  if (isLast) {
+    // DEBUG (temporary): if the end screen fails to show, this makes the
+    // failure visible instead of silently freezing on the results screen.
+    // Remove this try/catch once the "infinite game" bug is confirmed fixed.
+    try {
+      showEndScreen();
+    } catch (e) {
+      console.error('showEndScreen() threw an error — game cannot finish:', e);
+      alert('DEBUG: экран победителя не открылся.\n\n' + (e && e.message ? e.message : e) + '\n\nСкриншот этого окна и/или консоли (F12) поможет найти причину.');
+    }
+    return;
+  }
   currentTeamIdx++;
   if (currentTeamIdx >= teams.length) { currentTeamIdx = 0; currentRound++; }
   goToTurnScreen();
