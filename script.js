@@ -283,7 +283,7 @@ buildTopicPills();
 
 // ═══ steppers ═══
 let timerVal = 60, roundsVal = 3;
-function adjTimer(d) { timerVal = Math.min(180, Math.max(20, timerVal + d)); document.getElementById('timerVal').textContent = timerVal; }
+function adjTimer(d) { timerVal = Math.min(180, Math.max(20, timerVal + d)); document.getElementById('timerVal').textContent = formatTime(timerVal); }
 function adjRounds(d) { roundsVal = Math.min(10, Math.max(1, roundsVal + d)); document.getElementById('roundsVal').textContent = roundsVal; }
 
 // ═══ TEAMS ═══
