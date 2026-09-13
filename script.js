@@ -106,7 +106,6 @@ function handleNext(targetId, btnEl, raysId) {
   playConfirmBlip();
   btnEl.classList.remove('press'); void btnEl.offsetWidth; btnEl.classList.add('press');
   setTimeout(() => btnEl.classList.remove('press'), 150);
-  burst(document.getElementById(raysId));
   setTimeout(() => showScreen(targetId), 560);
 }
 
@@ -116,7 +115,6 @@ function handlePlay() {
   const btn = document.getElementById('btnPlay');
   btn.classList.remove('press'); void btn.offsetWidth; btn.classList.add('press');
   setTimeout(() => btn.classList.remove('press'), 150);
-  burst(document.getElementById('raysTeams'));
   setTimeout(startGame, 560);
 }
 
@@ -444,13 +442,6 @@ function updateTimerUI() {
   fill.style.strokeDashoffset = L * (1 - pct);
 }
 
-function flash(type) {
-  const el = document.getElementById('flash');
-  el.style.background = type === 'correct' ? 'rgba(74,222,128,0.14)' : 'rgba(248,113,113,0.12)';
-  el.style.opacity = 1;
-  setTimeout(() => { el.style.opacity = 0; }, 180);
-}
-
 function pressBtn(id) {
   const btn = document.getElementById(id);
   btn.classList.add('press');
@@ -460,7 +451,6 @@ function pressBtn(id) {
 function handleGot() {
   if (!currentWordObj) return;
   playCoinSound();
-  flash('correct');
   pressBtn('btnGot');
   turnWords.push({ word: currentWordObj.word, cat: currentWordObj.cat, result: 'correct' });
   loadNextWord();
@@ -471,7 +461,6 @@ function handleSkip() {
   pressBtn('btnSkip');
   if (penaltyOn) {
     playHitSound();
-    flash('skip');
   } else {
     playNeutralTick();
   }
@@ -561,7 +550,6 @@ function handleResultsNext(btn) {
   playConfirmBlip();
   btn.classList.remove('press'); void btn.offsetWidth; btn.classList.add('press');
   setTimeout(() => btn.classList.remove('press'), 150);
-  burst(document.getElementById('raysResults'));
   setTimeout(nextTurn, 560);
 }
 
@@ -736,6 +724,5 @@ function showEndScreen() {
 }
 
 function handlePlayAgain() {
-  burstAt(document.getElementById('btnPlayAgain'));
   setTimeout(() => showScreen('screenMenu'), 300);
 }
