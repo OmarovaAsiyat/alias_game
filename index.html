@@ -120,10 +120,7 @@
 
       <div class="card">
         <div class="toggle-wrap">
-          <div>
-            <div class="mode-label" style="margin-bottom:4px">Penalty for skip</div>
-            <div class="hint-text">Each ✕ skipped word deducts 1 point</div>
-          </div>
+          <div class="mode-label">Skip penalty</div>
           <label class="toggle">
             <input type="checkbox" id="penaltyToggle">
             <span class="toggle-slider"></span>
@@ -155,17 +152,8 @@
     <div class="wiz-title">Teams</div>
 
     <div class="gap-14">
-      <div class="card gap-10">
-        <div class="team-count-row">
-          <div class="mode-label">Number of teams</div>
-          <div style="display:flex;gap:8px">
-            <button class="btn-plain" id="btnRemoveTeam" onclick="burstAt(this); removeTeam()">− Remove</button>
-            <button class="btn-plain" id="btnAddTeam" onclick="burstAt(this); addTeam()">+ Add</button>
-          </div>
-        </div>
-      </div>
       <div class="gap-10" id="teamsList"></div>
-      <div class="hint-text">Min 2 · Max 6 teams</div>
+      <button class="btn-plain" id="btnAddTeam" onclick="burstAt(this); addTeam()" style="width:100%">+ Add team</button>
     </div>
 
     <div class="primary-wrap">

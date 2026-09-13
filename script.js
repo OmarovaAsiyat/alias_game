@@ -301,16 +301,24 @@ function buildTeamsList() {
     input.value = t.name;
     input.oninput = () => { teams[i].name = input.value; };
     row.appendChild(input);
+    const removeBtn = document.createElement('button');
+    removeBtn.className = 'team-remove-btn';
+    removeBtn.type = 'button';
+    removeBtn.textContent = '✕';
+    removeBtn.disabled = teams.length <= 2;
+    removeBtn.onclick = () => { burstAt(removeBtn); removeTeamAt(i); };
+    row.appendChild(removeBtn);
     list.appendChild(row);
   });
-  document.getElementById('btnRemoveTeam').disabled = teams.length <= 2;
   document.getElementById('btnAddTeam').disabled = teams.length >= 6;
 }
 function addTeam() {
   if (teams.length < 6) { teams.push({ name: `Team ${String.fromCharCode(65 + teams.length)}` }); buildTeamsList(); }
 }
-function removeTeam() {
-  if (teams.length > 2) { teams.pop(); buildTeamsList(); }
+function removeTeamAt(i) {
+  if (teams.length <= 2) return;
+  teams.splice(i, 1);
+  buildTeamsList();
 }
 buildTeamsList();
 
