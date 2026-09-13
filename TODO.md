@@ -24,10 +24,10 @@ results.js, pause.js, endgame.js) — но они пустые, index.html их 
 - [ ] `effects.js` — визуальные эффекты, не завязанные на игровую логику
       (buildRays, burst, burstAt, buildConfetti). `burst`/`burstAt` всё ещё
       используются (кнопка "start the game", выбор уровня, пилюли тем,
-      Add/Remove team, ← Back, звук в паузе) — переносим функции как есть.
-      Вызовы на кнопках-Next/Play/Ready/Play Again/Resume уже убраны (см.
-      «Общий стиль» — выполнено). `flash` в модуль **не переносим** —
-      функция удалена из script.js целиком, её больше нет.
+      Add/Remove team, ← Back) — переносим функции как есть. Вызовы на
+      кнопках-Next/Play/Ready/Play Again/Resume уже убраны (см. «Общий
+      стиль» — выполнено). `flash` в модуль **не переносим** — функция
+      удалена из script.js целиком, её больше нет.
 - [ ] `dictionary.js` — загрузка и разбор словарей (parseDictionary,
       applyLoadedDictionary, buildLevelList, syncLevelColor, slugifyCat)
 - [ ] `navigation.js` — переключение экранов и мастер настроек (showScreen,
@@ -41,7 +41,7 @@ results.js, pause.js, endgame.js) — но они пустые, index.html их 
       renderRoundSummary, renderResultsList, toggleResult,
       handleResultsNext, nextTurn)
 - [ ] `pause.js` — пауза и выход из игры (openPause, closePause,
-      togglePauseSound, syncPauseIcons, resetQuitArm, handleQuit)
+      resetQuitArm, handleQuit)
 - [ ] `endgame.js` — финальный экран (setupTrophyArt, showEndScreen,
       handlePlayAgain)
 
@@ -65,8 +65,18 @@ results.js, pause.js, endgame.js) — но они пустые, index.html их 
       ← Back, значок звука в паузе.
 - [x] ~~Убрать flash~~ — сделано, функция `flash()` и оба вызова
       (correct/skip на игровом экране) удалены из script.js целиком.
-- [ ] Иконки паузы и звука сделать пиксельными (сейчас эмодзи); кнопка
-      **Quit** — в том же стиле, что и кнопка **Skip**.
+- [x] ~~Иконка паузы — квадратный блок~~ — `.pause-icon-btn` (⏸ в шапке
+      игрового экрана) теперь квадрат 40×40 с рамкой и фоном, как и
+      квадраты в самом меню паузы, а не голый эмодзи с паддингом.
+- [x] ~~Иконка звука в паузе~~ — убрана совсем (кнопка `soundSquare`,
+      функции `togglePauseSound()`/`syncPauseIcons()`): звук больше не
+      выключается через паузу, просто всегда включён.
+- [x] ~~Крестики удаления команд~~ — переделаны: невидимый квадратный
+      блок под размер самого ✕ (без рамки/фона), пиксельный шрифт
+      ('Press Start 2P'), серый (`var(--muted)`) когда неактивен (команд
+      всего 2), белый (`var(--text)`) когда рабочий — burst на клике
+      остался (был уже в JS).
+- [ ] Кнопка **Quit** — в том же стиле, что и кнопка **Skip**.
 
 ## Мастер настройки игры — новые шаги (на будущее)
 - [ ] Шаг: выбор книги или импорт материала.
