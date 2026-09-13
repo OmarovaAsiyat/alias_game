@@ -236,11 +236,9 @@ function applyLoadedDictionary(parsed) {
   selectedTopics = CATEGORIES.map(c => c.id);
   buildTopicPills();
   const hint = document.getElementById('topicsHint');
-  if (CATEGORIES.length === 0) {
-    hint.textContent = 'This dictionary is currently empty — add categories and words to its .txt file to play this level.';
-  } else {
-    hint.textContent = 'Words are loaded from the dictionary file for this level.';
-  }
+  hint.textContent = CATEGORIES.length === 0
+    ? 'This dictionary is currently empty — add categories and words to its .txt file to play this level.'
+    : '';
 }
 
 // ═══ TOPICS (Vocabulary Bank) — built from the loaded dictionary ═══
@@ -252,7 +250,7 @@ function buildTopicPills() {
   CATEGORIES.forEach(topic => {
     const btn = document.createElement('button');
     btn.className = 'pill' + (selectedTopics.includes(topic.id) ? ' active' : '');
-    btn.textContent = topic.label;
+    btn.textContent = formatTopicLabel(topic.label);
     btn.onclick = () => {
       burstAt(btn);
       if (selectedTopics.includes(topic.id)) {
@@ -264,13 +262,22 @@ function buildTopicPills() {
     };
     wrap.appendChild(btn);
   });
-  document.getElementById('topicsSelectAllBtn').textContent =
-    selectedTopics.length === CATEGORIES.length ? 'Clear' : 'Select All';
 }
-function toggleAllTopics() {
+function selectAllTopics() {
   if (CATEGORIES.length === 0) return;
-  selectedTopics = selectedTopics.length === CATEGORIES.length ? [CATEGORIES[0].id] : CATEGORIES.map(t => t.id);
+  selectedTopics = CATEGORIES.map(t => t.id);
   buildTopicPills();
+}
+function clearAllTopics() {
+  selectedTopics = [];
+  buildTopicPills();
+}
+
+// "Words From Other Languages — File 6B"  ->  "6B | Words From Other Languages"
+// (categories without a "File X" suffix are shown unchanged)
+function formatTopicLabel(label) {
+  const m = label.match(/^(.*?)\s*—\s*File\s+(\d+[A-Za-z]?)\s*$/i);
+  return m ? `${m[2]} | ${m[1].trim()}` : label;
 }
 buildTopicPills();
 

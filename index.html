@@ -71,13 +71,12 @@
     <div class="wiz-title">Choose your topics</div>
     <div class="card gap-10">
       <div class="team-count-row">
-        <div class="mode-label">Vocabulary Bank</div>
-        <button class="btn-plain" id="topicsSelectAllBtn" onclick="burstAt(this); toggleAllTopics()">Select All</button>
+        <button class="btn-plain" id="topicsSelectAllBtn" onclick="burstAt(this); selectAllTopics()">Select all</button>
+        <button class="btn-plain" id="topicsClearBtn" onclick="burstAt(this); clearAllTopics()">Clear</button>
       </div>
       <div class="pills" id="topicPills"></div>
     </div>
-    <div class="hint-text" style="margin-top:14px" id="topicsHint">Words are loaded from the dictionary file for this
-      level.</div>
+    <div class="hint-text" style="margin-top:14px" id="topicsHint"></div>
     <div class="primary-wrap">
       <div class="rays" id="raysTopics"></div>
       <button class="primary-btn" id="btnTopicsNext" onclick="handleTopicsNext(this)">Next</button>
