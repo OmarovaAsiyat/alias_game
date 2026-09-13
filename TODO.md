@@ -3,53 +3,61 @@
 ## 🔴 Баги — начать с этого
 - [x] ~~**Бесконечная игра**~~ — решено: игру открывали через `file://`, из-за чего словари не грузились через fetch; плюс баг был как раз тем самым отсутствием реального script.js (см. фикс от 11.09.2026). Через `python3 -m http.server` игра нормально доходит до экрана победителя. Логика nextTurn/showEndScreen проверена — сама по себе была корректна.
 
-## Рефакторинг: разбить script.js на модули
-Сейчас вся логика игры лежит в одном большом файле `script.js` (741 строка).
-В папке `scripts/` уже есть файлы-заготовки под будущее разделение
-(state.js, audio.js, effects.js, dictionary.js, navigation.js, game.js,
-results.js, pause.js, endgame.js) — но они пустые, index.html их не
-использует, script.js подключён напрямую (см. фикс от 11.09.2026).
+## Рефакторинг: разбить script.js на модули — готово
+`script.js` (711 строк) удалён, код перенесён построчно (через python-скрипт,
+без ручной перепечатки — важно для двух огромных base64-строк со звуком и
+трофеем; их совпадение с оригиналом проверено по md5) в 9 файлов внутри
+`scripts/`, `index.html` подключает все девять по порядку вместо одного
+`script.js`.
 
-**Принцип деления** — не «по размеру», а по зоне ответственности: файл =
-один смысловой блок, который меняется вместе.
+Фактическая карта (несколько имён/функций успели поменяться за время
+правок экранов, поэтому она немного отличается от исходного плана):
+- [x] `state.js` — все глобальные переменные состояния (LEVEL_COLORS, LEVELS,
+      selectedLevel, CATEGORIES, WORDS, dictionariesLoaded, selectedTopics,
+      timerVal, roundsVal, teams, penaltyOn + его слушатель, gameTimeLeft,
+      gameTimerInterval, timeIsUp, isPaused, scores, currentTeamIdx,
+      currentRound, wordPool, usedWords, turnWords, currentWordObj).
+      **Отступление от исходного плана**: `soundOn`/`audioCtx` сюда не
+      переносила — их использует только audio.js, вынос в общий state.js
+      добавил бы косвенность без пользы, оставила рядом с остальным звуком.
+      То же с `quitArmed`/`quitArmTimeout` — они локальны для pause.js.
+- [x] `effects.js` — buildRays, burst, burstAt (+ их инициализация).
+      `flash`/`buildConfetti` тут нет: flash удалён совсем ещё раньше,
+      confetti — часть финального экрана, переехала в endgame.js.
+- [x] `audio.js` — tone, ensureAudio, playStartJingle, playConfirmBlip,
+      playAudioClip, playCoinSound, playHitSound, playNeutralTick,
+      playVictoryFanfare + SFX_VICTORY_SRC/SFX_SKIP_PENALTY_SRC + свои
+      audioCtx/soundOn (см. отступление выше).
+- [x] `dictionary.js` — slugifyCat, parseDictionary, applyLoadedDictionary,
+      buildLevelList, syncLevelColor.
+- [x] `navigation.js` — showScreen, handleStart, handleNext, handlePlay,
+      handleLevelNext, handleTopicsNext, buildTopicPills, selectAllTopics,
+      clearAllTopics, formatTopicLabel, adjTimer, adjRounds, buildTeamsList,
+      nextTeamLetter, addTeam, removeTeamAt. (`toggleAllTopics` из старого
+      плана уже не существует — заменена на select/clear ещё на этапе
+      правок экрана Choose your topics; `formatTopicLabel`/`nextTeamLetter`
+      появились позже как фиксы багов.)
+- [x] `game.js` — shuffleArray, buildWordPool, getNextWord, startGame,
+      goToTurnScreen, beginTurn, loadNextWord, formatTime, updateTimerUI,
+      pressBtn, handleGot, handleSkip. (`setupTimerBorder` из старого плана
+      удалена вместе со старым SVG-таймером.)
+- [x] `results.js` — goToResults, renderRoundSummary, renderResultsList,
+      toggleResult, handleResultsNext, nextTurn.
+- [x] `pause.js` — openPause, closePause, resetQuitArm, handleQuit.
+      (`togglePauseSound`/`syncPauseIcons` из старого плана удалены вместе
+      с иконкой звука в паузе.)
+- [x] `endgame.js` — setupTrophyArt, buildConfetti, playVictoryFanfare,
+      showEndScreen, handlePlayAgain + TROPHY_IMG_SRC.
 
-Карта разбиения (расписана по функциям):
-- [ ] `state.js` — все глобальные переменные состояния игры (selectedLevel,
-      CATEGORIES, WORDS, teams, scores, currentTeamIdx, currentRound,
-      wordPool, usedWords, turnWords, currentWordObj, timerVal, roundsVal,
-      soundOn, isPaused и т.д.)
-- [ ] `audio.js` — весь звук (tone, playStartJingle, playConfirmBlip,
-      playCoinSound, playHitSound, playNeutralTick, playVictoryFanfare,
-      ensureAudio)
-- [ ] `effects.js` — визуальные эффекты, не завязанные на игровую логику
-      (buildRays, burst, burstAt, buildConfetti). `burst`/`burstAt` всё ещё
-      используются (кнопка "start the game", выбор уровня, пилюли тем,
-      Add/Remove team, ← Back) — переносим функции как есть. Вызовы на
-      кнопках-Next/Play/Ready/Play Again/Resume уже убраны (см. «Общий
-      стиль» — выполнено). `flash` в модуль **не переносим** — функция
-      удалена из script.js целиком, её больше нет.
-- [ ] `dictionary.js` — загрузка и разбор словарей (parseDictionary,
-      applyLoadedDictionary, buildLevelList, syncLevelColor, slugifyCat)
-- [ ] `navigation.js` — переключение экранов и мастер настроек (showScreen,
-      handleStart, handleNext, handleLevelNext, handleTopicsNext,
-      buildTopicPills, toggleAllTopics, adjTimer, adjRounds, buildTeamsList,
-      addTeam, removeTeam)
-- [ ] `game.js` — игровой цикл (buildWordPool, getNextWord, startGame,
-      goToTurnScreen, beginTurn, loadNextWord, setupTimerBorder,
-      updateTimerUI, pressBtn, handleGot, handleSkip)
-- [ ] `results.js` — экран результатов и переход между ходами (goToResults,
-      renderRoundSummary, renderResultsList, toggleResult,
-      handleResultsNext, nextTurn)
-- [ ] `pause.js` — пауза и выход из игры (openPause, closePause,
-      resetQuitArm, handleQuit)
-- [ ] `endgame.js` — финальный экран (setupTrophyArt, showEndScreen,
-      handlePlayAgain)
-
-План: аккуратно перенести код из script.js в эти файлы по карте выше,
-обновить теги `<script>` в index.html, проверить что игра работает так же,
-как раньше.
-
-Статус: не начато.
+Порядок подключения в index.html: state → effects → audio → dictionary →
+navigation → game → results → pause → endgame. Важен только для первых
+четырёх — они выполняют код сразу при загрузке страницы (строят topic
+pills, список уровней/команд и т.п.) и трогают переменные из state.js;
+остальные пять состоят целиком из объявлений функций и порядку не
+подвержены. Проверено: построчный перенос (711 строк до и после совпадают
+1:1), md5 двух base64-строк совпадает с оригиналом, статический анализ по
+всем файлам не нашёл ни одной необъявленной ссылки на функцию/переменную.
+Живьём в браузере после переноса ещё не проверяла — это следующий шаг.
 
 ## Общий стиль и эффекты
 - [x] ~~Убрать эффект burst на кнопках в стиле "Got it"~~ — сделано.
