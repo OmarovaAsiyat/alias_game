@@ -466,7 +466,6 @@ function handleSkip() {
 // ═══ RESULTS SCREEN (per turn) ═══
 function goToResults() {
   const team = teams[currentTeamIdx];
-  document.getElementById('resultsRoundLabel').textContent = `Round ${currentRound} · Results`;
   document.getElementById('resultsTeamName').textContent = team.name;
 
   let delta = 0;
