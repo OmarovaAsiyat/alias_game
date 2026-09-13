@@ -750,17 +750,15 @@ body::before {
   gap: 16px;
 }
 
-/* same pill look as the active topic tags on "Choose your topics" —
-   same font/format ("1A | Category"), just not clickable here */
+/* neutral pixel caption — text now matches the "Choose your topics"
+   format ("1A | Category") via formatTopicLabel(), style stays the
+   quiet muted pixel label (no pill/border) */
 .word-cat {
-  font-family: 'DM Mono', monospace;
-  font-size: 12px;
-  letter-spacing: 0.02em;
-  padding: 9px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--wiz-color);
-  color: var(--wiz-color);
-  background: color-mix(in srgb, var(--wiz-color) 12%, var(--bg));
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
 .word-main {
