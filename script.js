@@ -312,8 +312,18 @@ function buildTeamsList() {
   });
   document.getElementById('btnAddTeam').disabled = teams.length >= 6;
 }
+function nextTeamLetter() {
+  const used = new Set(
+    teams.map(t => (t.name.match(/^Team ([A-Z])$/) || [])[1]).filter(Boolean)
+  );
+  for (let i = 0; i < 26; i++) {
+    const letter = String.fromCharCode(65 + i);
+    if (!used.has(letter)) return letter;
+  }
+  return String.fromCharCode(65 + teams.length);
+}
 function addTeam() {
-  if (teams.length < 6) { teams.push({ name: `Team ${String.fromCharCode(65 + teams.length)}` }); buildTeamsList(); }
+  if (teams.length < 6) { teams.push({ name: `Team ${nextTeamLetter()}` }); buildTeamsList(); }
 }
 function removeTeamAt(i) {
   if (teams.length <= 2) return;
