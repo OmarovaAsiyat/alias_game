@@ -694,20 +694,24 @@ body::before {
   height: 40px;
 }
 
-/* big pixel countdown pill, MM:SS — same 3D-press family as the
-   Got-it/Skip buttons (pixel font, filled background, edge shadow),
-   just always the alert-red so it reads as "this is the clock" */
+/* big pixel countdown badge, MM:SS — a static display, not a button:
+   no press effect, no rounded corners — a real 8-bit-style staircase
+   clip-path instead, colored by the level theme like the rest of the
+   game screen */
 .game-timer {
   justify-self: center;
   font-family: 'Press Start 2P', monospace;
   font-size: clamp(20px, 7vw, 30px);
   letter-spacing: 0.05em;
   color: var(--accent-ink);
-  background: var(--skip);
-  border: none;
-  border-radius: 14px;
+  background: var(--wiz-color);
   padding: 12px 26px;
-  box-shadow: 0 6px 0 color-mix(in srgb, var(--skip) 55%, black);
+  clip-path: polygon(
+    0 8px, 8px 8px, 8px 0,
+    calc(100% - 8px) 0, calc(100% - 8px) 8px, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 8px) calc(100% - 8px), calc(100% - 8px) 100%,
+    8px 100%, 8px calc(100% - 8px), 0 calc(100% - 8px)
+  );
 }
 
 /* pause trigger — square block, matches the pause-menu squares */
