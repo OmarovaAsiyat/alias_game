@@ -338,6 +338,7 @@ document.getElementById('penaltyToggle').addEventListener('change', e => { penal
 
 let gameTimeLeft = 60;
 let gameTimerInterval = null;
+let timeIsUp = false;
 let isPaused = false;
 
 let scores = [];            // one running total per team
@@ -396,11 +397,11 @@ function goToTurnScreen() {
 function beginTurn() {
   turnWords = [];
   gameTimeLeft = timerVal;
+  timeIsUp = false;
   const team = teams[currentTeamIdx];
   document.getElementById('gameRoundLabel').textContent = `Round ${currentRound} · ${team.name}`;
   document.getElementById('gameTeamName').textContent = team.name;
   loadNextWord();
-  setupTimerBorder();
   updateTimerUI();
   if (gameTimerInterval) clearInterval(gameTimerInterval);
   gameTimerInterval = setInterval(() => {
@@ -409,7 +410,7 @@ function beginTurn() {
     updateTimerUI();
     if (gameTimeLeft <= 0) {
       clearInterval(gameTimerInterval);
-      setTimeout(goToResults, 500);
+      timeIsUp = true;
     }
   }, 1000);
 }
@@ -427,42 +428,13 @@ function loadNextWord() {
   document.getElementById('wordMain').textContent = currentWordObj.word;
 }
 
-// measures the actual rendered card and draws two matching rounded-rect
-// outlines on top of it: a static "track" and a colored "fill" whose
-// dash-offset we animate — same trick as a circular countdown ring,
-// just traced clockwise around the card's rounded corners instead
-function setupTimerBorder() {
-  const card = document.getElementById('wordCard');
-  const svg = document.getElementById('timerBorderSvg');
-  const track = document.getElementById('timerBorderTrack');
-  const fill = document.getElementById('timerBorderFill');
-  const w = card.clientWidth, h = card.clientHeight;
-  if (!w || !h) return;
-  const sw = 3, r = 17;
-  svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
-  [track, fill].forEach(rect => {
-    rect.setAttribute('x', sw / 2);
-    rect.setAttribute('y', sw / 2);
-    rect.setAttribute('width', w - sw);
-    rect.setAttribute('height', h - sw);
-    rect.setAttribute('rx', r);
-    rect.setAttribute('ry', r);
-  });
-  fill.dataset.length = fill.getTotalLength();
-}
-window.addEventListener('resize', () => {
-  if (document.getElementById('screenGame').classList.contains('active')) {
-    setupTimerBorder();
-    updateTimerUI();
-  }
-});
-
+// pixel-style digital countdown in the header — plain text, no
+// measuring/animating an SVG outline anymore
 function updateTimerUI() {
-  const pct = Math.max(0, gameTimeLeft / timerVal);
-  const fill = document.getElementById('timerBorderFill');
-  const L = parseFloat(fill.dataset.length) || 0;
-  fill.style.strokeDasharray = L;
-  fill.style.strokeDashoffset = L * (1 - pct);
+  const el = document.getElementById('gameTimer');
+  const secs = Math.max(0, gameTimeLeft);
+  el.textContent = secs;
+  el.classList.toggle('time-up', secs <= 0);
 }
 
 function pressBtn(id) {
@@ -476,7 +448,7 @@ function handleGot() {
   playCoinSound();
   pressBtn('btnGot');
   turnWords.push({ word: currentWordObj.word, cat: currentWordObj.cat, result: 'correct' });
-  loadNextWord();
+  if (timeIsUp) { goToResults(); } else { loadNextWord(); }
 }
 
 function handleSkip() {
@@ -488,7 +460,7 @@ function handleSkip() {
     playNeutralTick();
   }
   turnWords.push({ word: currentWordObj.word, cat: currentWordObj.cat, result: 'skip' });
-  loadNextWord();
+  if (timeIsUp) { goToResults(); } else { loadNextWord(); }
 }
 
 // ═══ RESULTS SCREEN (per turn) ═══
